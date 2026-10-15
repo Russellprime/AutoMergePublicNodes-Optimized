@@ -16,6 +16,7 @@ from core.fetcher import Source, fetch_all
 from core.generator import node_to_clash, node_to_url, write_outputs, write_chunked_outputs, write_protocol_outputs
 from core.geo import _is_public_ip, geo_flag_map
 from core.parser import Node, parse_content
+from core.clean_ip import extract_candidate_ips, probe_clean_ips
 from core.filtering import filter_rule_reasons, load_filter_rules, quality_prefilter
 from core.sampling import sample_for_real_test, sample_for_real_test_weighted
 from tools.audit_sources import load_previous_audit
@@ -25,7 +26,7 @@ from tools.source_scores_report import build_source_scores_report
 from tools.scoring_profiles_report import build_scoring_profiles_report
 from tools.actions_summary import build_summary
 from tools.suggest_source_cleanup import apply_disable_suggestions, build_cleanup_payload, build_cleanup_report, build_cleanup_suggestions, build_disable_patch_preview, filter_names
-from tools.validate_config import validate_filter_rules, validate_scoring_rules, validate_scoring_warnings, validate_sources
+from tools.validate_config import validate_filter_rules, validate_runtime_config, validate_scoring_rules, validate_scoring_warnings, validate_sources
 from tools.doctor import build_doctor_report
 from core.stats import build_source_scores, build_trend_alerts, load_historical_pass_rates, update_trend_history, update_node_stability, load_node_stability, get_stable_nodes
 from core.report import write_health_report
@@ -147,11 +148,11 @@ class RegressionTests(unittest.TestCase):
                 cwd=str(Path(__file__).resolve().parent.parent),
             )
         self.assertEqual(result.returncode, 2, f"expected exit 2, got {result.returncode}: {result.stderr}")
-        self.assertIn("verified 输出为 0", result.stderr)
+        self.assertIn("verified output is 0", result.stderr)
 
     def test_fetch_all_overall_timeout_returns_partial_results(self):
         """P0 — overall timeout 时返回已完成源, 不因 coroutine.done() AttributeError 二次失败"""
-        async def fake_fetch_source(session, src, timeout):
+        async def fake_fetch_source(session, src, timeout, retries=2):
             if src.name == "slow":
                 await asyncio.sleep(1)
             return type("Result", (), {"source": src})()
@@ -362,6 +363,69 @@ class RegressionTests(unittest.TestCase):
         self.assertEqual([n.tag for n, _ in results], ["fast", "slow"])
         self.assertEqual(errors.get("OSError"), 1)
 
+    def test_load_sources_dedupes_and_skips_malformed_entries(self):
+        from core.fetcher import load_sources
+
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "sources.yaml"
+            p.write_text(
+                yaml.safe_dump(
+                    {
+                        "sources": [
+                            {"url": "https://a.example/sub", "name": "a"},
+                            {"url": "https://a.example/sub", "name": "a-dup-url"},
+                            {"url": "https://b.example/sub", "name": "a"},
+                            {"name": "missing-url"},
+                            {"url": "https://c.example/sub", "name": "c"},
+                        ]
+                    },
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+            sources = load_sources(str(p))
+        self.assertEqual([s.url for s in sources], ["https://a.example/sub", "https://c.example/sub"])
+
+    def test_probe_clean_ips_stops_at_target(self):
+        candidates = [f"8.8.8.{i}" for i in range(1, 10)]
+        started: list[str] = []
+
+        class FakeWriter:
+            def close(self):
+                return None
+
+            async def wait_closed(self):
+                return None
+
+        async def fake_open_connection(host, port):
+            started.append(host)
+            await asyncio.sleep(0.01)
+            return object(), FakeWriter()
+
+        with patch("asyncio.open_connection", fake_open_connection):
+            found, stats = asyncio.run(
+                probe_clean_ips(candidates, target=2, timeout=1, concurrency=1, port=443, max_latency_ms=1000)
+            )
+        self.assertEqual(len(found), 2)
+        self.assertEqual(stats["tested"], 2)
+        self.assertEqual(len(started), 2)
+
+    def test_extract_candidate_ips_dedupes_and_keeps_public_only(self):
+        nodes = [
+            Node("http", "a", "8.8.8.8", 80, {}),
+            Node("http", "b", "8.8.8.8", 80, {}),
+            Node("http", "c", "127.0.0.1", 80, {}),
+        ]
+        ips = asyncio.run(extract_candidate_ips(nodes))
+        self.assertEqual(ips, ["8.8.8.8"])
+
+    def test_runtime_config_validation(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "runtime.yaml"
+            p.write_text("clean_ip_port: 70000\\n", encoding="utf-8")
+            errors = validate_runtime_config(str(p))
+        self.assertTrue(any("clean_ip_port" in err for err in errors))
+
     def test_main_stats_include_stage_durations_and_error_details(self):
         import main as m
 
@@ -499,6 +563,57 @@ class RegressionTests(unittest.TestCase):
             self.assertIn("speed_kbps", top[0])
             self.assertIn("netflix", top[0])
             self.assertIn("chatgpt", top[0])
+
+    def test_main_writes_deterministic_200_links(self):
+        import main as m
+
+        class Args:
+            sources = "config/sources.yaml"
+            output_dir = ""
+            repo = "o/r"
+            branch = "main"
+            fetch_concurrency = 1
+            fetch_timeout = 1
+            fetch_overall_timeout = 2
+            quality_filter = False
+            max_per_server = 0
+            tcp_check = False
+            tcp_concurrency = 1
+            tcp_timeout = 0.1
+            test_limit = 0
+            real_test = False
+            top_n = 200
+            global_output = False
+            min_retain_ratio = 0
+            all_output_mode = "light"
+            lightweight_probe = False
+            top_links_path = "200_links.txt"
+            clean_ip_target = 0
+            clean_ip_output = "clean_ips_20.txt"
+
+        source = Source(url="https://example.com/sub.txt", name="mock-source")
+        nodes = [
+            Node("http", f"node-{i:03d}", f"8.8.8.{(i % 200) + 1}", 8080 + (i % 5), {})
+            for i in range(250)
+        ]
+        fetch_result = type("FetchResult", (), {"source": source, "success": True, "nodes": nodes})()
+
+        async def fake_fetch_all(*args, **kwargs):
+            return [fetch_result]
+
+        async def fake_geo_flag_map(nodes):
+            return {}
+
+        with tempfile.TemporaryDirectory() as d:
+            args = Args()
+            args.output_dir = d
+            with patch("main.load_sources", return_value=[source]), \
+                 patch("main.fetch_all", fake_fetch_all), \
+                 patch("main.geo_flag_map", fake_geo_flag_map):
+                asyncio.run(m.run(args))
+            links = (Path(d) / "200_links.txt").read_text(encoding="utf-8").splitlines()
+        self.assertEqual(len(links), 200)
+        self.assertEqual(len(links), len(set(links)))
 
     def test_singbox_tester_records_skipped_target_kinds(self):
         with tempfile.NamedTemporaryFile() as f:
@@ -828,11 +943,11 @@ class RegressionTests(unittest.TestCase):
         }
         summary = build_summary(stats, repo="owner/repo", branch="main")
         self.assertIn("scoring_profiles.md", summary)
-        self.assertIn("发布说明", summary)
+        self.assertIn("Release notes", summary)
         self.assertIn("docs/releases/README.md", summary)
-        self.assertIn("延迟分", summary)
-        self.assertIn("协议历史分", summary)
-        self.assertIn("来源历史分", summary)
+        self.assertIn("Latency pts", summary)
+        self.assertIn("Protocol-history pts", summary)
+        self.assertIn("Source-history pts", summary)
         self.assertIn("| 80 | trojan | 120 | 10 | 35 | 14 | 9 | 10 | 12 | src |", summary)
 
     def test_actions_summary_handles_missing_score_breakdown(self):
@@ -959,10 +1074,10 @@ weights:
         with tempfile.TemporaryDirectory() as d:
             path = write_health_report(d, stats)
             content = Path(path).read_text(encoding="utf-8")
-        self.assertIn("评分权重", content)
-        self.assertIn("延迟分", content)
-        self.assertIn("协议历史分", content)
-        self.assertIn("来源历史分", content)
+        self.assertIn("Ranking Weights", content)
+        self.assertIn("Latency pts", content)
+        self.assertIn("Protocol-history pts", content)
+        self.assertIn("Source-history pts", content)
         self.assertIn("| 80 | trojan | 120 | 10 | 35 | 14 | 9 | 10 | 12 | src | example.com |", content)
 
     def test_doctor_report_runs_without_strict_requirements(self):

@@ -1,8 +1,8 @@
 """
-输出健康审计工具
-- 检查 output 中订阅文件是否齐全且可解析
-- 检查重复 tag/name、URL 数量、协议分布、地区分组
-- 输出 JSON 健康报告，供 CI 归档和人工查看
+Output health audit utility.
+- Validates required output files exist and can be parsed
+- Checks duplicate tags/names, URL counts, protocol and region distributions
+- Generates JSON health report for CI and manual review
 """
 from __future__ import annotations
 
@@ -169,8 +169,7 @@ def build_health_report(output_dir: str = "output", verified_prefix: str = "veri
     all_compare_count = all_count if all_report.get("mode") == "full" else all_report.get("url_count", 0)
     strategy_ok = all_compare_count >= verified_count
 
-    # §4.1 — 加报警字段, 让 CI 报警有明确根因
-    # protocol_pass_rate 任何协议 pass 率 < 10% 算异常
+    # Alerts for CI diagnosis
     low_pass_protocols = []
     for proto, counts in stats.get("protocol_pass_rate", {}).items():
         total = counts.get("pass", 0) + counts.get("fail", 0)
@@ -223,7 +222,7 @@ def build_health_report(output_dir: str = "output", verified_prefix: str = "veri
             "all_compare_nodes": all_compare_count,
             "verified_json_nodes": verified_count,
             "all_contains_at_least_verified_count": strategy_ok,
-            "note": "all.* 来自去重池；verified.* 来自质量过滤/TCP/真测后的 Top N。light 模式下 all_compare_nodes 使用 all.urls 数量。",
+            "note": "all.* is the deduplicated pool; verified.* is Top N after filters/TCP/real-test. In light mode all_compare_nodes uses all.urls count.",
         },
         "stats_summary": {
             "nodes_raw": stats.get("nodes_raw"),
@@ -266,7 +265,7 @@ def main():
     parser.add_argument("--verified-prefix", default="verified")
     parser.add_argument("--output", default="output/health_report.json")
     parser.add_argument("--strict", action="store_true",
-                        help="§1.5 — 报警时也 exit 1 (默认只记录, 不失败 CI)")
+                        help="Fail when warnings are present (default only records warnings)")
     args = parser.parse_args()
 
     report = build_health_report(args.output_dir, args.verified_prefix)
@@ -276,13 +275,13 @@ def main():
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if not report["ok"]:
         raise SystemExit(1)
-    # §1.5 — verified 为 0 时硬失败 (这是真测全挂的明确信号)
+    # Hard fail when verified output is empty.
     if report["prefixes"].get(args.verified_prefix, {}).get("json_node_count", 0) == 0:
-        print("::error::verified 输出为 0, 真测全挂或测试源全失效", file=sys.stderr)
+        print("::error::verified output is 0; real-test likely failed or all test sources are unavailable", file=sys.stderr)
         raise SystemExit(2)
-    # §1.5 — strict 模式下报警也失败
+    # Fail on warnings in strict mode.
     if args.strict and report["status"] in {"warning", "critical"}:
-        print("::error::alerts 触发, 但启用 --strict 才失败", file=sys.stderr)
+        print("::error::alerts detected and --strict is enabled", file=sys.stderr)
         raise SystemExit(3)
 
 

@@ -1,14 +1,8 @@
 """
-真实代理测试器
-- 使用 sing-box（Karing 内核同源）启动每个节点为本地 SOCKS5
-- 真实 HTTP 请求测试连通性和延迟
-- 每个 worker 独立端口避免冲突
-- 失败快速跳过
-
-为什么用 sing-box 而不是 xray:
-- Karing 用的就是 sing-box，测试结果与 Karing 一致
-- 原生支持 hysteria2/tuic/anytls 等新协议
-- 配置格式统一，无需协议转换映射
+Real proxy tester.
+- Uses sing-box to start each node as a local SOCKS5 endpoint
+- Validates connectivity and latency with real HTTP requests
+- Uses per-worker ports to avoid conflicts
 """
 from __future__ import annotations
 
@@ -28,28 +22,22 @@ from aiohttp_socks import ProxyConnector
 from core.parser import Node
 
 
-# 测试目标 4 层
-# - 204: youtube / google 204 = 真的墙外节点, 不能直连的才是好节点
-# - cn-block: 必须能访问中国大陆站 (baidu), 否则节点根本没流量代理能力
-# - geo: 出口 IP 不能是中国, 否则就是"挂在中国机房的出口", 没意义
-# 第 4 层为带宽测试，能下完才算"真用得起来"
-TEST_TARGETS = [
+BASE_TEST_TARGETS = [
     ("https://www.youtube.com/generate_204",   "204"),
     ("https://www.google.com/generate_204",    "204"),
     ("https://www.baidu.com/robots.txt",       "cn-block"),
     ("https://www.cloudflare.com/cdn-cgi/trace", "geo"),
-    ("https://speed.cloudflare.com/__down?bytes=102400", "speed"),
 ]
+SPEED_TEST_URL_TEMPLATE = "https://speed.cloudflare.com/__down?bytes={bytes}"
 SPEED_REQUIRED_BYTES = 100_000
 SPEED_TIMEOUT_SEC = 8
 
-# 可选的解锁检测（不影响 pass/fail，只记录能力）
+# Optional unlock checks (record-only, no pass/fail impact)
 UNLOCK_TARGETS = [
     ("https://www.netflix.com/title/81215567",   "netflix"),
     ("https://chat.openai.com/cdn-cgi/trace",     "chatgpt"),
 ]
 
-# exit-ip geo check 通过时, body 里 country 字段不能等于这个
 GEO_BLOCKED_COUNTRY = "CN"
 
 DEFAULT_MIN_LATENCY_MS = 30.0  # 低于此值视为可疑节点；可通过 CLI 设为 0 关闭
@@ -140,7 +128,11 @@ class SingBoxTester:
                  min_latency_ms: float = DEFAULT_MIN_LATENCY_MS,
                  skip_target_kinds: Iterable[str] | None = None,
                  probe_only: bool = False,
-                 test_one_timeout: float = 15.0):
+                 test_one_timeout: float = 15.0,
+                 probe_count: int = 3,
+                 retries: int = 0,
+                 enable_speed_test: bool = True,
+                 speed_test_bytes: int = SPEED_REQUIRED_BYTES):
         if not os.path.exists(sb_path):
             raise FileNotFoundError(f"sing-box binary not found: {sb_path}")
         self.sb_path = os.path.abspath(sb_path)
@@ -151,6 +143,10 @@ class SingBoxTester:
         self.skip_target_kinds = set(skip_target_kinds or [])
         self.probe_only = probe_only
         self.test_one_timeout = test_one_timeout  # 单节点总超时，防 tail latency
+        self.probe_count = max(1, int(probe_count))
+        self.retries = max(0, int(retries))
+        self.enable_speed_test = bool(enable_speed_test)
+        self.speed_test_bytes = max(1, int(speed_test_bytes))
         self._port_counter = 30000
 
     def _alloc_port(self) -> int:
@@ -247,15 +243,16 @@ class SingBoxTester:
                 speed_download_bytes = 0
                 speed_download_time = 0.0
 
-                # probe 模式: 只测 204 快速探活, geo 检测留给完整真测阶段(超时更宽裕)
-                probe_targets = TEST_TARGETS[:1] if self.probe_only else TEST_TARGETS
+                targets = list(BASE_TEST_TARGETS)
+                if self.enable_speed_test and not self.probe_only:
+                    targets.append((SPEED_TEST_URL_TEMPLATE.format(bytes=self.speed_test_bytes), "speed"))
+                probe_targets = targets[:1] if self.probe_only else targets
                 for target_url, target_kind in probe_targets:
                     if target_kind in self.skip_target_kinds:
                         continue
 
                     if target_kind == "204":
-                        # 多采样：对 204 目标做 3 次取中位数；probe_only 模式下只做 1 次（过滤器不需要精度）
-                        sample_count = 1 if self.probe_only else 3
+                        sample_count = 1 if self.probe_only else self.probe_count
                         samples = []
                         for _ in range(sample_count):
                             tstart = time.monotonic()
@@ -306,14 +303,15 @@ class SingBoxTester:
                                     failed_target = f"{target_kind}:exit-country={cc}"
                                     break
                             elif target_kind == "speed":
-                                # 必须真的下载完 100KB
+                                # Must download enough bytes to count as usable throughput.
                                 if resp.status != 200:
                                     failed_target = f"{target_kind}:status={resp.status}"
                                     break
                                 total = 0
                                 async for chunk in resp.content.iter_chunked(8192):
                                     total += len(chunk)
-                                if total < SPEED_REQUIRED_BYTES:
+                                required = max(1, self.speed_test_bytes)
+                                if total < required:
                                     failed_target = f"{target_kind}:only-{total}B"
                                     break
                                 speed_download_bytes = total
@@ -336,7 +334,7 @@ class SingBoxTester:
                                     # ChatGPT: 能访问 trace 端点就算可
                                     result.chatgpt_ok = resp.status == 200
                         except Exception:
-                            pass  # 解锁检测失败不影响整体
+                            pass
 
                 if failed_target is None and latencies:
                     # 取非下载目标的平均延迟（不算下载耗时）
@@ -352,7 +350,7 @@ class SingBoxTester:
                         # 量化下载速度
                         if speed_download_bytes > 0 and speed_download_time > 0:
                             result.speed_kbps = round(speed_download_bytes / 1024 / speed_download_time, 1)
-                        # 协议指纹抗检测评分（REALITY/uTLS/WS+TLS 等）
+                        # Fingerprint resistance score for ranking.
                         try:
                             from core._fingerprint_test import analyze_fingerprint_resistance
                             fp_analysis = analyze_fingerprint_resistance(node)
@@ -417,5 +415,5 @@ class SingBoxTester:
             if r.success:
                 valid += 1
             if done % progress_every == 0 or done == len(nodes):
-                print(f"  进度: {done}/{len(nodes)} 通过: {valid}", flush=True)
+                print(f"  Progress: {done}/{len(nodes)} success: {valid}", flush=True)
         return results

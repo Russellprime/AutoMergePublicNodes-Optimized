@@ -1,10 +1,9 @@
 """
-订阅源抓取器
-- 异步并发抓取
-- 支持动态 URL (日期模板 %Y/%m/%d)
-- 支持订阅列表 (一个 URL 中含多个 URL)
-- 自动 base64 解码
-- 重试机制
+Public source fetcher.
+- Async concurrent fetch
+- Dynamic URL support (date templates like %Y/%m/%d)
+- List source support (a source that returns child source URLs)
+- Retry handling
 """
 from __future__ import annotations
 
@@ -103,14 +102,19 @@ async def _fetch_one(session: aiohttp.ClientSession, url: str, timeout: int = 15
     return False, last_err, 0
 
 
-async def fetch_source(session: aiohttp.ClientSession, src: Source, timeout: int = 15) -> FetchResult:
+async def fetch_source(
+    session: aiohttp.ClientSession,
+    src: Source,
+    timeout: int = 15,
+    retries: int = 2,
+) -> FetchResult:
     """抓取单个订阅源"""
     start = asyncio.get_event_loop().time()
     result = FetchResult(source=src)
 
     url = src.resolved_url
 
-    # 先尝试原始 URL，失败则尝试 jsdelivr CDN
+    # Try original URL first, then jsDelivr fallback.
     candidates = [url]
     cdn = to_jsdelivr(url)
     if cdn != url:
@@ -119,7 +123,7 @@ async def fetch_source(session: aiohttp.ClientSession, src: Source, timeout: int
     last_err = ""
     text = ""
     for candidate in candidates:
-        ok, content, n_bytes = await _fetch_one(session, candidate, timeout, retries=2)
+        ok, content, n_bytes = await _fetch_one(session, candidate, timeout, retries=max(retries, 0))
         if ok:
             text = content
             result.bytes_received = n_bytes
@@ -131,19 +135,19 @@ async def fetch_source(session: aiohttp.ClientSession, src: Source, timeout: int
         result.duration = asyncio.get_event_loop().time() - start
         return result
 
-    # 订阅列表：每行是另一个 URL
+    # List source: each line is another URL.
     if src.kind == "list":
         sub_urls = []
         for line in text.splitlines():
             line = line.strip()
             if line and "://" in line and not line.startswith("#"):
                 sub_urls.append(line)
-        # 递归抓取（限制深度为 1），并发限制避免 list 源被慢 URL 串行拖垮。
+        # Fetch one depth of child URLs with bounded concurrency.
         list_sem = asyncio.Semaphore(10)
 
         async def _fetch_sub(sub_url: str) -> List[Node]:
             async with list_sem:
-                ok, content, _ = await _fetch_one(session, sub_url, timeout)
+                ok, content, _ = await _fetch_one(session, sub_url, timeout, retries=max(retries, 0))
                 return parse_content(content) if ok else []
 
         sub_results = await asyncio.gather(*[_fetch_sub(u) for u in sub_urls[:50]])
@@ -152,11 +156,11 @@ async def fetch_source(session: aiohttp.ClientSession, src: Source, timeout: int
     else:
         result.nodes = parse_content(text)
 
-    # 协议过滤
+    # Protocol filter
     if src.ignore_protocols:
         result.nodes = [n for n in result.nodes if n.type not in src.ignore_protocols]
 
-    # 数量限制
+    # Per-source node cap
     if src.max_nodes > 0 and len(result.nodes) > src.max_nodes:
         result.nodes = result.nodes[:src.max_nodes]
 
@@ -165,12 +169,15 @@ async def fetch_source(session: aiohttp.ClientSession, src: Source, timeout: int
     return result
 
 
-async def fetch_all(sources: List[Source], concurrency: int = 30, timeout: int = 15,
-                  overall_timeout: int = 120) -> List[FetchResult]:
-    """并发抓取所有订阅源
-
-    §3.3 — 加 overall_timeout 防止单源 hang 住整批, 默认 120s 总上限
-    """
+async def fetch_all(
+    sources: List[Source],
+    concurrency: int = 30,
+    timeout: int = 15,
+    overall_timeout: int = 120,
+    retries: int = 2,
+    rate_limit_per_sec: float = 0.0,
+) -> List[FetchResult]:
+    """Fetch all enabled sources with bounded concurrency and optional rate limit."""
     sem = asyncio.Semaphore(concurrency)
     connector = aiohttp.TCPConnector(limit=concurrency * 2)
     headers = {
@@ -178,12 +185,32 @@ async def fetch_all(sources: List[Source], concurrency: int = 30, timeout: int =
         "Accept": "*/*",
     }
 
+    rate_lock = asyncio.Lock()
+    next_allowed_at = 0.0
+
     async def _wrapped(session, src):
+        nonlocal next_allowed_at
         async with sem:
-            return await fetch_source(session, src, timeout)
+            if rate_limit_per_sec > 0:
+                min_interval = 1.0 / rate_limit_per_sec
+                async with rate_lock:
+                    now = asyncio.get_event_loop().time()
+                    wait_for = max(0.0, next_allowed_at - now)
+                    if wait_for > 0:
+                        await asyncio.sleep(wait_for)
+                    next_allowed_at = asyncio.get_event_loop().time() + min_interval
+            return await fetch_source(session, src, timeout, retries=max(retries, 0))
 
     async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
-        tasks = [asyncio.create_task(_wrapped(session, s)) for s in sources if s.enabled]
+        async def _fetch_one_source(src: Source) -> FetchResult:
+            # Keep retries bounded and isolated per source.
+            for attempt in range(max(retries, 0) + 1):
+                result = await _wrapped(session, src)
+                if result.success or attempt >= retries:
+                    return result
+            return FetchResult(source=src, success=False, error="exhausted")
+
+        tasks = [asyncio.create_task(_fetch_one_source(s)) for s in sources if s.enabled]
         try:
             return await asyncio.wait_for(asyncio.gather(*tasks), timeout=overall_timeout)
         except asyncio.TimeoutError:
@@ -200,22 +227,45 @@ async def fetch_all(sources: List[Source], concurrency: int = 30, timeout: int =
 
 
 def load_sources(path: str) -> List[Source]:
-    """从 YAML 配置加载订阅源"""
+    """Load source definitions from YAML and deduplicate malformed/duplicate entries."""
     with open(path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
 
     sources: List[Source] = []
+    seen_urls: Set[str] = set()
+    seen_names: Set[str] = set()
     for entry in data.get("sources", []):
         if isinstance(entry, str):
-            sources.append(Source(url=entry))
+            url = entry.strip()
+            if not url:
+                continue
+            if url in seen_urls:
+                continue
+            seen_urls.add(url)
+            sources.append(Source(url=url))
         elif isinstance(entry, dict):
+            url = str(entry.get("url", "")).strip()
+            if not url:
+                logger.warning("Skipping malformed source without URL: %s", entry)
+                continue
+            name = str(entry.get("name", "")).strip()
+            if url in seen_urls:
+                continue
+            if name and name in seen_names:
+                logger.warning("Duplicate source name skipped: %s", name)
+                continue
             src = Source(
-                url=entry["url"],
-                name=entry.get("name", ""),
+                url=url,
+                name=name,
                 kind=entry.get("kind", "url"),
                 enabled=entry.get("enabled", True),
                 ignore_protocols=set(entry.get("ignore_protocols", [])),
                 max_nodes=int(entry.get("max_nodes", 0)),
             )
+            seen_urls.add(url)
+            if name:
+                seen_names.add(name)
             sources.append(src)
+        else:
+            logger.warning("Skipping malformed source entry: %r", entry)
     return sources
