@@ -1,0 +1,37 @@
+# Runtime pipeline defaults (can be overridden by CLI arguments)
+
+top_n: 200
+top_links_path: "200_links.txt"
+clean_ip_output: "clean_ips_20.txt"
+clean_ip_target: 20
+
+fetch_concurrency: 30
+fetch_timeout: 15
+fetch_overall_timeout: 120
+fetch_retries: 2
+fetch_rate_limit_per_sec: 0.0
+
+tcp_concurrency: 500
+tcp_timeout: 2.0
+
+test_concurrency: 75
+test_timeout: 6.0
+test_retries: 0
+test_limit: 3000
+
+probe_concurrency: 100
+probe_timeout: 4.0
+probe_count: 3
+
+speed_test_enabled: true
+speed_test_bytes: 102400
+
+max_latency_ms: 0.0
+min_speed_kbps: 0.0
+
+clean_ip_concurrency: 60
+clean_ip_timeout: 2.0
+clean_ip_port: 443
+clean_ip_max_latency_ms: 800.0
+clean_ip_resolve_timeout: 2.0
+clean_ip_resolve_concurrency: 60

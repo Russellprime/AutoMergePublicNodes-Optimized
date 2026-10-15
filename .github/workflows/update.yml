@@ -15,19 +15,19 @@ on:
   workflow_dispatch:
     inputs:
       top_n:
-        description: 'verified.* 输出节点数(默认 300)'
+        description: 'verified.* output node limit (default 200)'
         required: false
-        default: '300'
+        default: '200'
       test_limit:
         description: '送入真测的最大节点数(默认 3000)'
         required: false
         default: '3000'
       min_retain_ratio:
-        description: '缩水守门比例，0=关闭并强制写入本轮真测结果(默认 0)'
+        description: 'output guard ratio, 0 disables guard and always writes current run'
         required: false
         default: '0'
       audit:
-        description: '同时跑订阅源审计'
+        description: 'run source audit in the same workflow'
         type: boolean
         default: false
 
@@ -115,7 +115,7 @@ jobs:
         run: python tools/import_contract.py
 
       - name: Config validation
-        run: python tools/validate_config.py --sources config/sources.yaml --filter-rules config/filter_rules.yaml --scoring-rules 'config/scoring*.yaml'
+        run: python tools/validate_config.py --sources config/sources.yaml --filter-rules config/filter_rules.yaml --runtime-config config/runtime.yaml --scoring-rules 'config/scoring*.yaml'
 
       - name: Unit tests
         run: python -m unittest -v tests.test_regressions
@@ -125,7 +125,7 @@ jobs:
           AUTONODES_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
-          TOP_N="${{ github.event.inputs.top_n || '300' }}"
+          TOP_N="${{ github.event.inputs.top_n || '200' }}"
           TEST_LIMIT="${{ github.event.inputs.test_limit || '3000' }}"
           MIN_RETAIN_RATIO="${{ github.event.inputs.min_retain_ratio || '0' }}"
           [[ "$TOP_N" =~ ^[0-9]+$ ]] || { echo "::error::top_n must be a non-negative integer"; exit 1; }
@@ -232,6 +232,8 @@ jobs:
             output/node_stability.json
             output/trend_history.json
             output/*.converter.md
+            output/200_links.txt
+            output/clean_ips_20.txt
 
       - name: Notify on failure
         if: failure()
@@ -281,7 +283,7 @@ jobs:
           REPO="${{ github.repository }}"
           BRANCH="${{ github.event.repository.default_branch }}"
           failed=0
-          for f in verified.txt verified.yaml verified.json verified.urls verified.converter.md global.txt global.yaml global.json global.urls global.converter.md all.txt all.yaml all.json all.urls all.converter.md stats.json source_audit.json health_report.json health_report.md daily_report.md source_scores.md scoring_profiles.md source_cleanup_suggestions.md source_cleanup_suggestions.json source_discovery.json node_stability.json trend_history.json geo_cache.json; do
+          for f in verified.txt verified.yaml verified.json verified.urls verified.converter.md global.txt global.yaml global.json global.urls global.converter.md all.txt all.yaml all.json all.urls all.converter.md 200_links.txt clean_ips_20.txt stats.json source_audit.json health_report.json health_report.md daily_report.md source_scores.md scoring_profiles.md source_cleanup_suggestions.md source_cleanup_suggestions.json source_discovery.json node_stability.json trend_history.json geo_cache.json; do
             code=$(curl -s -o /tmp/jsdelivr-purge.json -w '%{http_code}' "https://purge.jsdelivr.net/gh/${REPO}@${BRANCH}/output/${f}" || true)
             if [ "$code" -ge 500 ] || [ "$code" = "000" ]; then
               echo "::warning::jsDelivr purge failed for output/${f} HTTP ${code}"

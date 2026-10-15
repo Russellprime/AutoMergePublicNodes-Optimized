@@ -1,13 +1,13 @@
 # ============================================================
-# 订阅源配置 - 经过审计的活跃源（2026 年仍在更新）
+# Public source configuration (audited active sources)
 # ============================================================
-# 字段说明：
-#   url:               订阅 URL，支持 %Y/%m/%d 动态日期模板
-#   name:              来源标识（用于审计报告）
-#   kind:              url(单订阅) | list(订阅列表) | dynamic(动态URL)
-#   enabled:           是否启用
-#   ignore_protocols: 忽略的协议（例如 [ssr, ss]）
-#   max_nodes:         单源最大节点数（0=不限）
+# Fields:
+#   url:               Subscription URL, supports dynamic date templates (%Y/%m/%d)
+#   name:              Source identifier (used in reports)
+#   kind:              url (single feed) | list (feed of feed URLs) | dynamic
+#   enabled:           Enable/disable this source
+#   ignore_protocols: Protocols to ignore (example: [ssr, ss])
+#   max_nodes:         Per-source node cap (0 = unlimited)
 # ============================================================
 
 sources:
@@ -73,7 +73,7 @@ sources:
   name: Mr8AHAL
   kind: url
 
-# ===== v3.1: 10 个新增高质量源 (2026-05 调研) =====
+# ===== v3.1: newly added high-quality sources (2026-05 research) =====
 - url: https://raw.githubusercontent.com/Misaka-blog/chromego_merge/main/sub/merged_proxies_new.yaml
   name: chromego_merge
   kind: url
@@ -102,7 +102,7 @@ sources:
   name: peasoft-NoMoreWalls
   kind: url
 
-# ===== v3.2: 本地验证新增源 (2026-06) =====
+# ===== v3.2: locally validated additional sources (2026-06) =====
 - url: https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt
   name: Epodonios-all
   kind: url
@@ -111,7 +111,7 @@ sources:
   name: roosterkid-openproxylist-v2ray
   kind: url
 
-# ===== v3.3: 深挖验证新增源 (2026-06) =====
+# ===== v3.3: deep-scan validated additional sources (2026-06) =====
 - url: https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt
   name: DeltaKronecker-all
   kind: url
@@ -133,7 +133,7 @@ sources:
   kind: url
   max_nodes: 0
 
-# ===== v3.4: 补充遗漏订阅源 (2026-06) =====
+# ===== v3.4: backfilled missing subscription sources (2026-06) =====
 - url: https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/refs/heads/main/subscriptions/v2ray/all_sub.txt
   name: MatinGhanbari-all-sub
   kind: url
@@ -160,8 +160,8 @@ sources:
   kind: url
 
 # ============================================================
-# Telegram 频道源（t.me/s/ 公开网页预览，无需登录）
-# 扫描时间: 2026-06-18 | 共 20 个高产频道
+# Telegram channel sources (public web preview via t.me/s/, no login needed)
+# Scan date: 2026-06-18 | 20 high-yield channels
 # ============================================================
 - url: https://t.me/s/ShadowsocksM
   name: tg-ShadowsocksM
@@ -245,7 +245,7 @@ sources:
   max_nodes: 500
 
 # ============================================================
-# Telegram 频道源 - 第二批（全量扫描 2026-06-18，节点数≥3 全收录）
+# Telegram channel sources - batch 2 (full scan 2026-06-18, include channels with >=3 nodes)
 # ============================================================
 - url: https://t.me/s/v2ray_free_conf
   name: tg-v2ray_free_conf

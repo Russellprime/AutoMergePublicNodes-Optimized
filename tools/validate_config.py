@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""无需联网校验项目配置文件。"""
+"""Validate project config files without network access."""
 from __future__ import annotations
 
 import argparse
@@ -267,6 +267,60 @@ def validate_filter_rules(path: str) -> List[str]:
     return errors
 
 
+def validate_runtime_config(path: str) -> List[str]:
+    errors: List[str] = []
+    p = Path(path)
+    if not p.exists():
+        return []
+    try:
+        data = _load_yaml(p) or {}
+    except Exception as exc:
+        return [f"runtime.yaml parse failed: {exc}"]
+    if not isinstance(data, dict):
+        return ["runtime.yaml must be a mapping"]
+
+    numeric_rules = {
+        "top_n": 0,
+        "clean_ip_target": 0,
+        "fetch_concurrency": 1,
+        "fetch_timeout": 1,
+        "fetch_overall_timeout": 1,
+        "fetch_retries": 0,
+        "fetch_rate_limit_per_sec": 0,
+        "tcp_concurrency": 1,
+        "tcp_timeout": 0,
+        "test_concurrency": 1,
+        "test_timeout": 0,
+        "test_retries": 0,
+        "test_limit": 0,
+        "probe_concurrency": 1,
+        "probe_timeout": 0,
+        "probe_count": 1,
+        "speed_test_bytes": 1,
+        "max_latency_ms": 0,
+        "min_speed_kbps": 0,
+        "clean_ip_concurrency": 1,
+        "clean_ip_timeout": 0,
+        "clean_ip_port": 1,
+        "clean_ip_max_latency_ms": 0,
+        "clean_ip_resolve_timeout": 0,
+        "clean_ip_resolve_concurrency": 1,
+    }
+    for key, min_value in numeric_rules.items():
+        if key not in data:
+            continue
+        value = _as_number(data.get(key), f"runtime.{key}", errors, min_value=float(min_value))
+        if key == "clean_ip_port" and value is not None and value > 65535:
+            _add(errors, "runtime.clean_ip_port must be <= 65535")
+    for key in ("speed_test_enabled", "global_output", "china_check", "real_test", "lightweight_probe", "quality_filter"):
+        if key in data and not isinstance(data.get(key), bool):
+            _add(errors, f"runtime.{key} must be boolean")
+    for key in ("top_links_path", "clean_ip_output"):
+        if key in data and not str(data.get(key) or "").strip():
+            _add(errors, f"runtime.{key} must be a non-empty string")
+    return errors
+
+
 def _expand_paths(patterns: List[str]) -> List[str]:
     paths: List[str] = []
     seen: Set[str] = set()
@@ -285,11 +339,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sources", default="config/sources.yaml")
     parser.add_argument("--filter-rules", default="config/filter_rules.yaml")
+    parser.add_argument("--runtime-config", default="config/runtime.yaml")
     parser.add_argument("--scoring-rules", action="append", default=[], help="评分配置文件，可重复传入，也支持 glob，例如 config/scoring*.yaml")
     args = parser.parse_args()
 
     scoring_paths = _expand_paths(args.scoring_rules or ["config/scoring.yaml"])
-    errors = validate_sources(args.sources) + validate_filter_rules(args.filter_rules)
+    errors = validate_sources(args.sources) + validate_filter_rules(args.filter_rules) + validate_runtime_config(args.runtime_config)
     warnings: List[str] = []
     for scoring_path in scoring_paths:
         errors.extend(validate_scoring_rules(scoring_path))
@@ -298,11 +353,11 @@ def main() -> None:
         print(f"配置警告：{warning}", file=sys.stderr)
 
     if errors:
-        print("配置校验失败：", file=sys.stderr)
+        print("Configuration validation failed:", file=sys.stderr)
         for err in errors:
             print(f"- {err}", file=sys.stderr)
         raise SystemExit(1)
-    print("配置校验通过")
+    print("Configuration validation passed")
 
 
 if __name__ == "__main__":
