@@ -1,65 +1,65 @@
 {
   "version": "2.5.0",
-  "timestamp": "2026-10-27 11:29:05",
-  "duration_sec": 337.8,
+  "timestamp": "2026-10-27 17:16:27",
+  "duration_sec": 285.4,
   "degraded_mode": false,
   "stage_durations": {
-    "fetch": 7.7,
-    "geo": 1.5,
-    "tcp": 85.5,
-    "probe": 106.1,
-    "real_test": 91.7,
-    "china_check": 29.7,
-    "write_verified": 0.1,
+    "fetch": 8.2,
+    "geo": 1.3,
+    "tcp": 79.1,
+    "probe": 103.7,
+    "real_test": 56.9,
+    "china_check": 20.5,
+    "write_verified": 0.0,
     "generate": 13.6
   },
   "sources_total": 107,
   "sources_unique": 107,
-  "sources_healthy": 88,
-  "sources_failed": 19,
-  "nodes_raw": 96332,
-  "nodes_collected": 96332,
-  "nodes_dedup": 26667,
+  "sources_healthy": 87,
+  "sources_failed": 20,
+  "nodes_raw": 96480,
+  "nodes_collected": 96480,
+  "nodes_dedup": 26787,
   "nodes_tcp_ok": 3000,
-  "nodes_tcp_reachable": 6107,
-  "nodes_probe_ok": 774,
-  "nodes_real_ok": 143,
+  "nodes_tcp_reachable": 6410,
+  "nodes_probe_ok": 406,
+  "nodes_real_ok": 76,
   "probe_error_details": [
     [
       "204",
-      1956
+      2385
     ],
     [
       "test_one_timeout",
-      170
+      173
     ],
     [
       "sing-box exited 1",
-      100
+      36
     ]
   ],
-  "nodes_verified_output": 143,
-  "nodes_global_output": 148,
-  "nodes_top_output": 143,
+  "nodes_verified_output": 76,
+  "nodes_global_output": 80,
+  "nodes_top_output": 76,
   "top_links_output_path": "200_links.txt",
   "output_guard": {
     "verified": {
       "preserved": false,
-      "previous_count": 108,
-      "proposed_count": 143
+      "previous_count": 143,
+      "proposed_count": 76
     },
     "global": {
       "preserved": false,
-      "previous_count": 114,
-      "proposed_count": 148
+      "previous_count": 148,
+      "proposed_count": 80
     }
   },
-  "nodes_global_extra_from_cn_block": 5,
+  "nodes_global_extra_from_cn_block": 4,
   "global_skip_target_kinds": [
     "cn-block"
   ],
-  "nodes_all_output": 26667,
-  "elapsed_test_time_sec": 91.7,
+  "nodes_all_output": 26787,
+  "elapsed_test_time_sec": 56.9,
   "ranking": {
     "weights": {
       "latency": 25.0,
@@ -77,29 +77,29 @@
     "target": 20,
     "count": 20,
     "output_path": "clean_ips_20.txt",
-    "tested_candidates": 79,
-    "all_candidates": 143,
+    "tested_candidates": 76,
+    "all_candidates": 76,
     "success_count": 20
   },
   "all_output_mode": "full",
   "protocol_dist": {
-    "hysteria2": 1380,
-    "shadowsocks": 12642,
-    "trojan": 7771,
-    "vless": 56148,
-    "vmess": 17793,
-    "hysteria": 18,
+    "hysteria2": 1369,
+    "shadowsocks": 12626,
+    "trojan": 7800,
+    "vless": 56728,
+    "vmess": 17493,
+    "hysteria": 17,
     "tuic": 6,
-    "socks": 57,
+    "socks": 70,
     "anytls": 25,
-    "shadowsocksr": 168,
-    "http": 324
+    "shadowsocksr": 163,
+    "http": 183
   },
   "filter_rule_hits": {
-    "ss_method:rc4-md5": 57,
-    "vmess_security:none": 533,
-    "ss_method:aes-256-cfb": 652,
-    "vmess_security:auto": 4443,
+    "ss_method:rc4-md5": 55,
+    "vmess_security:none": 538,
+    "ss_method:aes-256-cfb": 653,
+    "vmess_security:auto": 4444,
     "vmess_network:grpc": 49,
     "ss_method:aes-128-cfb": 48,
     "ssr_method:rc4": 2,
@@ -107,117 +107,117 @@
     "vmess_network:h2": 2
   },
   "protocol_pass_rate": {
+    "vless": {
+      "pass": 76,
+      "fail": 154
+    },
     "trojan": {
-      "pass": 80,
-      "fail": 19
+      "pass": 54,
+      "fail": 14
     },
     "hysteria2": {
       "pass": 9,
-      "fail": 1
-    },
-    "vless": {
-      "pass": 175,
-      "fail": 259
+      "fail": 5
     },
     "shadowsocks": {
-      "pass": 39,
-      "fail": 100
-    },
-    "vmess": {
-      "pass": 1,
-      "fail": 0
-    },
-    "http": {
-      "pass": 73,
-      "fail": 15
+      "pass": 21,
+      "fail": 44
     },
     "socks": {
       "pass": 0,
-      "fail": 3
+      "fail": 1
+    },
+    "http": {
+      "pass": 22,
+      "fail": 6
     }
   },
   "source_pass_rate": {
     "Au1rxx-base64": {
-      "pass": 157,
-      "fail": 164
+      "pass": 131,
+      "fail": 186
     },
     "Surfboard-tg-mixed": {
-      "pass": 40,
-      "fail": 77
+      "pass": 4,
+      "fail": 1
+    },
+    "mheidari-all": {
+      "pass": 20,
+      "fail": 20
     },
     "tg-OutlineReleasedKey": {
       "pass": 1,
       "fail": 0
     },
-    "mheidari-all": {
-      "pass": 7,
-      "fail": 1
-    },
-    "ermaozi": {
-      "pass": 73,
-      "fail": 17
-    },
     "xiaoji235-airport-v2ray-all": {
       "pass": 0,
       "fail": 1
     },
+    "ermaozi": {
+      "pass": 22,
+      "fail": 5
+    },
+    "mahdibland-V2RayAggregator": {
+      "pass": 0,
+      "fail": 1
+    },
     "DeltaKronecker-all": {
-      "pass": 99,
-      "fail": 137
+      "pass": 4,
+      "fail": 10
     }
   },
   "source_nodes": {
-    "Au1rxx-base64": 1774,
-    "Au1rxx-clash": 1774,
+    "Au1rxx-base64": 1757,
+    "Au1rxx-clash": 1757,
     "tonykong-clash": 5,
     "tonykong-base64": 5,
     "ninja-vless": 1791,
     "ninja-hy2": 3,
     "ninja-tuic": 1,
-    "Surfboard-tg-mixed": 7021,
-    "Surfboard-tg-vless": 5284,
-    "mheidari-all": 24516,
+    "Surfboard-tg-mixed": 7059,
+    "Surfboard-tg-vless": 5319,
+    "mheidari-all": 24511,
     "Barabama-we": 0,
     "Barabama-yudou": 0,
     "vxiaov": 28,
     "freefq": 14,
     "ts-sf": 200,
-    "Pawdroid": 10,
-    "ermaozi": 603,
+    "Pawdroid": 11,
+    "ermaozi": 535,
     "zhangkai": 43,
     "Mr8AHAL": 1,
-    "chromego_merge": 202,
+    "chromego_merge": 218,
     "ts-sf-Fly": 201,
     "ripaojiedian-freenode": 14,
     "barabama-yudou66": 0,
     "barabama-nodefree": 0,
     "mahdibland-V2RayAggregator": 4573,
-    "ermaozi-get_subscribe": 455,
-    "peasoft-NoMoreWalls": 101,
-    "Epodonios-all": 7509,
+    "ermaozi-get_subscribe": 379,
+    "peasoft-NoMoreWalls": 109,
+    "Epodonios-all": 7531,
     "roosterkid-openproxylist-v2ray": 150,
     "DeltaKronecker-all": 3052,
     "moneyfly1-collectSub": 1164,
     "10ium-HighSpeed": 839,
-    "SoliSpirit-all": 10244,
+    "SoliSpirit-all": 10393,
     "10ium-ScrapeCategorize-Vless": 4988,
     "MatinGhanbari-all-sub": 3997,
-    "barry-far-vless": 5497,
-    "barry-far-Sub2": 494,
-    "barry-far-Sub1": 492,
+    "barry-far-vless": 5532,
+    "barry-far-Sub2": 491,
+    "barry-far-Sub1": 489,
     "MatinGhanbari-super-sub": 200,
     "xiaoji235-airport-v2ray-all": 6752,
     "tg-ShadowsocksM": 2,
-    "tg-LonUp_M": 164,
-    "tg-oneclickvpnkeys": 71,
+    "tg-LonUp_M": 176,
+    "tg-oneclickvpnkeys": 86,
     "tg-V2RAYProxy": 217,
     "tg-configfa": 36,
-    "tg-Outline_Vpn": 168,
+    "tg-Outline_Vpn": 177,
     "tg-tv2rayrr": 113,
     "tg-prrofile_purple": 146,
-    "tg-proxy_mtm": 38,
+    "tg-proxy_mtm": 54,
     "tg-Hope_Net": 73,
-    "tg-V2ray_Alpha": 107,
+    "tg-V2ray_Alpha": 110,
     "tg-fastkanfig": 81,
     "tg-ViProxys": 0,
     "tg-v2Source": 61,
@@ -226,7 +226,7 @@
     "tg-v2raybaz": 37,
     "tg-DarkVPNpro": 7,
     "tg-FreeV2rays": 20,
-    "tg-v2ray_free_conf": 20,
+    "tg-v2ray_free_conf": 19,
     "tg-Free_Vpn_for_All_of_Us": 18,
     "tg-V2SayFree": 17,
     "tg-v2nodes": 20,
@@ -236,7 +236,7 @@
     "tg-v2rayng_channel": 17,
     "tg-vpnstorefast": 18,
     "tg-CryptoGuardVPN": 16,
-    "tg-VlessConfig": 12,
+    "tg-VlessConfig": 16,
     "tg-V2rayNG_Outlinee": 20,
     "tg-ConfigV2rayNG": 200,
     "tg-SafeNet_Server": 18,
@@ -244,11 +244,11 @@
     "tg-V2RayRootFree": 13,
     "tg-freedomofinfor": 17,
     "tg-vpnfail_vless": 12,
-    "tg-DirectVPN": 12,
-    "tg-PrivateVPNs": 12,
+    "tg-DirectVPN": 16,
+    "tg-PrivateVPNs": 16,
     "tg-BESTFORBEST66": 8,
     "tg-ISVvpn": 35,
-    "tg-proxy_kafee": 33,
+    "tg-proxy_kafee": 0,
     "tg-VmessProtocol": 4,
     "tg-v2raying": 81,
     "tg-mehduox_vpn": 5,
@@ -286,24 +286,24 @@
       "recommendation": "observe"
     },
     "Au1rxx-base64": {
-      "score": 0.56,
-      "pass_rate": 0.489,
-      "smoothed_pass_rate": 0.489,
-      "pass": 157,
-      "fail": 164,
-      "tested": 321,
-      "parsed_nodes": 1774,
+      "score": 0.484,
+      "pass_rate": 0.413,
+      "smoothed_pass_rate": 0.414,
+      "pass": 131,
+      "fail": 186,
+      "tested": 317,
+      "parsed_nodes": 1757,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "Au1rxx-clash": {
-      "score": 0.246,
+      "score": 0.245,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 1774,
+      "parsed_nodes": 1757,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -330,12 +330,12 @@
       "recommendation": "observe"
     },
     "DeltaKronecker-all": {
-      "score": 0.5,
-      "pass_rate": 0.419,
-      "smoothed_pass_rate": 0.42,
-      "pass": 99,
-      "fail": 137,
-      "tested": 236,
+      "score": 0.332,
+      "pass_rate": 0.286,
+      "smoothed_pass_rate": 0.312,
+      "pass": 4,
+      "fail": 10,
+      "tested": 14,
       "parsed_nodes": 3052,
       "consecutive_dead": 0,
       "recommendation": "observe"
@@ -347,7 +347,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 7509,
+      "parsed_nodes": 7531,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -391,7 +391,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 10,
+      "parsed_nodes": 11,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -402,18 +402,18 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 10244,
+      "parsed_nodes": 10393,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "Surfboard-tg-mixed": {
-      "score": 0.425,
-      "pass_rate": 0.342,
-      "smoothed_pass_rate": 0.345,
-      "pass": 40,
-      "fail": 77,
-      "tested": 117,
-      "parsed_nodes": 7021,
+      "score": 0.446,
+      "pass_rate": 0.8,
+      "smoothed_pass_rate": 0.714,
+      "pass": 4,
+      "fail": 1,
+      "tested": 5,
+      "parsed_nodes": 7059,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -424,7 +424,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 5284,
+      "parsed_nodes": 5319,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -457,7 +457,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 492,
+      "parsed_nodes": 489,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -468,7 +468,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 494,
+      "parsed_nodes": 491,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -479,40 +479,40 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 5497,
+      "parsed_nodes": 5532,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "chromego_merge": {
-      "score": 0.183,
+      "score": 0.184,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 202,
+      "parsed_nodes": 218,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "ermaozi": {
-      "score": 0.828,
-      "pass_rate": 0.811,
-      "smoothed_pass_rate": 0.804,
-      "pass": 73,
-      "fail": 17,
-      "tested": 90,
-      "parsed_nodes": 603,
+      "score": 0.815,
+      "pass_rate": 0.815,
+      "smoothed_pass_rate": 0.793,
+      "pass": 22,
+      "fail": 5,
+      "tested": 27,
+      "parsed_nodes": 535,
       "consecutive_dead": 0,
       "recommendation": "prefer"
     },
     "ermaozi-get_subscribe": {
-      "score": 0.193,
+      "score": 0.19,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 455,
+      "parsed_nodes": 379,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -528,24 +528,24 @@
       "recommendation": "observe"
     },
     "mahdibland-V2RayAggregator": {
-      "score": 0.255,
-      "pass_rate": null,
-      "smoothed_pass_rate": 0.5,
+      "score": 0.207,
+      "pass_rate": 0.0,
+      "smoothed_pass_rate": 0.333,
       "pass": 0,
-      "fail": 0,
-      "tested": 0,
+      "fail": 1,
+      "tested": 1,
       "parsed_nodes": 4573,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "mheidari-all": {
-      "score": 0.568,
-      "pass_rate": 0.875,
-      "smoothed_pass_rate": 0.8,
-      "pass": 7,
-      "fail": 1,
-      "tested": 8,
-      "parsed_nodes": 24516,
+      "score": 0.58,
+      "pass_rate": 0.5,
+      "smoothed_pass_rate": 0.5,
+      "pass": 20,
+      "fail": 20,
+      "tested": 40,
+      "parsed_nodes": 24511,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -600,7 +600,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 101,
+      "parsed_nodes": 109,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -704,13 +704,13 @@
       "recommendation": "observe"
     },
     "tg-DirectVPN": {
-      "score": 0.175,
+      "score": 0.176,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 12,
+      "parsed_nodes": 16,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -787,7 +787,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 164,
+      "parsed_nodes": 176,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -809,18 +809,18 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 168,
+      "parsed_nodes": 177,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
     "tg-PrivateVPNs": {
-      "score": 0.175,
+      "score": 0.176,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 12,
+      "parsed_nodes": 16,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -897,7 +897,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 107,
+      "parsed_nodes": 110,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -913,13 +913,13 @@
       "recommendation": "observe"
     },
     "tg-VlessConfig": {
-      "score": 0.175,
+      "score": 0.176,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 12,
+      "parsed_nodes": 16,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -1018,7 +1018,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 71,
+      "parsed_nodes": 86,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -1034,14 +1034,14 @@
       "recommendation": "observe"
     },
     "tg-proxy_kafee": {
-      "score": 0.176,
+      "score": 0.025,
       "pass_rate": null,
       "smoothed_pass_rate": 0.5,
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 33,
-      "consecutive_dead": 0,
+      "parsed_nodes": 0,
+      "consecutive_dead": 1,
       "recommendation": "observe"
     },
     "tg-proxy_mtm": {
@@ -1051,7 +1051,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 38,
+      "parsed_nodes": 54,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -1117,7 +1117,7 @@
       "pass": 0,
       "fail": 0,
       "tested": 0,
-      "parsed_nodes": 20,
+      "parsed_nodes": 19,
       "consecutive_dead": 0,
       "recommendation": "observe"
     },
@@ -1299,204 +1299,190 @@
     }
   },
   "tcp_errors": {
-    "ConnectionRefusedError": 1057,
-    "TimeoutError": 6810,
-    "gaierror": 149,
-    "OSError": 236,
-    "SSRFBlocked": 2
+    "ConnectionRefusedError": 1106,
+    "gaierror": 303,
+    "TimeoutError": 6418,
+    "OSError": 241,
+    "SSRFBlocked": 4
   },
   "real_test_errors": {
-    "204": 21,
-    "geo": 193,
-    "test_one_timeout": 84,
-    "speed": 91,
-    "cn-block": 8
+    "geo": 115,
+    "speed": 58,
+    "204": 11,
+    "cn-block": 8,
+    "test_one_timeout": 32
   },
   "real_test_error_details": [
     {
-      "error": "geo:status=403",
-      "count": 97
+      "error": "geo:status=429",
+      "count": 67
     },
     {
       "error": "speed:ClientOSError",
-      "count": 90
+      "count": 58
     },
     {
-      "error": "geo:status=429",
-      "count": 84
+      "error": "geo:status=403",
+      "count": 46
     },
     {
       "error": "test_one_timeout:15.0s",
-      "count": 84
+      "count": 32
     },
     {
       "error": "204:TimeoutError",
-      "count": 8
-    },
-    {
-      "error": "204:ProxyError",
-      "count": 7
-    },
-    {
-      "error": "geo:ProxyError",
-      "count": 7
-    },
-    {
-      "error": "204:ClientOSError",
-      "count": 6
-    },
-    {
-      "error": "cn-block:TimeoutError",
       "count": 5
     },
     {
-      "error": "geo:TimeoutError",
-      "count": 3
+      "error": "204:ProxyError",
+      "count": 4
+    },
+    {
+      "error": "cn-block:ProxyError",
+      "count": 4
+    },
+    {
+      "error": "cn-block:TimeoutError",
+      "count": 2
+    },
+    {
+      "error": "cn-block:ClientOSError",
+      "count": 2
+    },
+    {
+      "error": "204:ClientOSError",
+      "count": 2
     }
   ],
   "real_test_error_structured": [
     {
       "target": "geo",
       "reason": "status",
-      "status": 403,
-      "value": "403",
-      "count": 97
+      "status": 429,
+      "value": "429",
+      "count": 67
     },
     {
       "target": "speed",
       "reason": "ClientOSError",
       "status": null,
       "value": null,
-      "count": 90
+      "count": 58
     },
     {
       "target": "geo",
       "reason": "status",
-      "status": 429,
-      "value": "429",
-      "count": 84
+      "status": 403,
+      "value": "403",
+      "count": 46
     },
     {
       "target": "test_one_timeout",
       "reason": "15.0s",
       "status": null,
       "value": null,
-      "count": 84
+      "count": 32
     },
     {
       "target": "204",
-      "reason": "TimeoutError",
-      "status": null,
-      "value": null,
-      "count": 8
-    },
-    {
-      "target": "204",
-      "reason": "ProxyError",
-      "status": null,
-      "value": null,
-      "count": 7
-    },
-    {
-      "target": "geo",
-      "reason": "ProxyError",
-      "status": null,
-      "value": null,
-      "count": 7
-    },
-    {
-      "target": "204",
-      "reason": "ClientOSError",
-      "status": null,
-      "value": null,
-      "count": 6
-    },
-    {
-      "target": "cn-block",
       "reason": "TimeoutError",
       "status": null,
       "value": null,
       "count": 5
     },
     {
-      "target": "geo",
-      "reason": "TimeoutError",
+      "target": "204",
+      "reason": "ProxyError",
       "status": null,
       "value": null,
-      "count": 3
-    },
-    {
-      "target": "geo",
-      "reason": "ClientOSError",
-      "status": null,
-      "value": null,
-      "count": 2
+      "count": 4
     },
     {
       "target": "cn-block",
       "reason": "ProxyError",
       "status": null,
       "value": null,
+      "count": 4
+    },
+    {
+      "target": "cn-block",
+      "reason": "TimeoutError",
+      "status": null,
+      "value": null,
       "count": 2
     },
     {
-      "target": "speed",
-      "reason": "ProxyError",
+      "target": "cn-block",
+      "reason": "ClientOSError",
+      "status": null,
+      "value": null,
+      "count": 2
+    },
+    {
+      "target": "204",
+      "reason": "ClientOSError",
+      "status": null,
+      "value": null,
+      "count": 2
+    },
+    {
+      "target": "geo",
+      "reason": "ClientOSError",
       "status": null,
       "value": null,
       "count": 1
     },
     {
-      "target": "cn-block",
-      "reason": "ClientOSError",
+      "target": "geo",
+      "reason": "ProxyError",
       "status": null,
       "value": null,
       "count": 1
     }
   ],
   "top_latencies_ms": [
-    332.6,
-    328.8,
-    306.9,
-    346.5,
-    292.3,
-    296.9,
-    282.3,
-    274.6,
-    411.2,
-    269.8,
-    389.2,
-    393.6,
-    317.0,
-    307.0,
-    417.2,
-    421.2,
-    461.4,
-    461.5,
-    506.4,
-    423.0
+    270.6,
+    355.2,
+    351.4,
+    520.7,
+    408.3,
+    548.6,
+    341.3,
+    380.0,
+    433.9,
+    412.3,
+    384.0,
+    398.8,
+    265.1,
+    258.2,
+    394.7,
+    397.2,
+    303.3,
+    358.7,
+    713.4,
+    370.3
   ],
   "top_jitters_ms": [
-    715.6,
-    707.7,
-    658.4,
-    746.6,
-    618.9,
-    229.7,
-    618.2,
-    599.2,
-    879.1,
-    518.6,
-    766.7,
-    634.5,
-    290.5,
-    574.1,
-    781.5,
-    775.8,
-    931.2,
-    913.9,
-    995.1,
-    796.1
+    649.7,
+    622.7,
+    606.8,
+    1346.3,
+    911.3,
+    1370.7,
+    695.4,
+    646.6,
+    1052.8,
+    950.7,
+    698.6,
+    607.2,
+    659.2,
+    667.1,
+    602.1,
+    1004.3,
+    790.6,
+    586.5,
+    1964.9,
+    595.8
   ],
   "scoring": {
     "weights": {
@@ -1518,18 +1504,18 @@
   },
   "top_scores": [
     {
-      "tag": "hysteria2-1853503215",
-      "server": "66.94.121.46",
-      "type": "hysteria2",
+      "tag": "trojan-1930537301",
+      "server": "66.163.122.7",
+      "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 211.5,
-      "jitter_ms": 540.8,
-      "score": 73.72,
+      "latency_ms": 270.6,
+      "jitter_ms": 649.7,
+      "score": 70.86,
       "score_breakdown": {
         "latency": {
-          "score": 0.9153,
+          "score": 0.8606,
           "weight": 25.0,
-          "points": 22.88
+          "points": 21.51
         },
         "jitter": {
           "score": 0.0,
@@ -1537,9 +1523,9 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 1.0,
+          "score": 0.9622,
           "weight": 10.0,
-          "points": 10.0
+          "points": 9.62
         },
         "speed": {
           "score": 1.0,
@@ -1547,40 +1533,40 @@
           "points": 10.0
         },
         "fingerprint_resistance": {
-          "score": 0.8,
+          "score": 0.5,
           "weight": 5.0,
-          "points": 4.0
+          "points": 2.5
         },
         "protocol_history": {
-          "score": 0.6429,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 9.64
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 1101.3,
-      "fingerprint_resistance": "medium",
+      "stability_bonus": 4.0,
+      "speed_kbps": 624.1,
+      "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "vless-1854108404",
-      "server": "44.248.233.99",
-      "type": "vless",
+      "tag": "trojan-1930077602",
+      "server": "216.152.155.54",
+      "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 278.0,
-      "jitter_ms": 521.5,
-      "score": 71.34,
+      "latency_ms": 277.7,
+      "jitter_ms": 614.7,
+      "score": 70.55,
       "score_breakdown": {
         "latency": {
-          "score": 0.8537,
+          "score": 0.854,
           "weight": 25.0,
-          "points": 21.34
+          "points": 21.35
         },
         "jitter": {
           "score": 0.0,
@@ -1588,9 +1574,9 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 1.0,
+          "score": 0.9471,
           "weight": 10.0,
-          "points": 10.0
+          "points": 9.47
         },
         "speed": {
           "score": 1.0,
@@ -1598,91 +1584,142 @@
           "points": 10.0
         },
         "fingerprint_resistance": {
-          "score": 1.0,
+          "score": 0.5,
           "weight": 5.0,
-          "points": 5.0
+          "points": 2.5
         },
         "protocol_history": {
-          "score": 0.52,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 7.8
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 501.0,
-      "fingerprint_resistance": "high",
-      "netflix": false,
-      "chatgpt": true
-    },
-    {
-      "tag": "vless-1850140815",
-      "server": "144.202.126.147",
-      "type": "vless",
-      "source": "Au1rxx-base64",
-      "latency_ms": 278.3,
-      "jitter_ms": 546.8,
-      "score": 67.85,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8534,
-          "weight": 25.0,
-          "points": 21.33
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.901,
-          "weight": 10.0,
-          "points": 9.01
-        },
-        "speed": {
-          "score": 0.751,
-          "weight": 10.0,
-          "points": 7.51
-        },
-        "fingerprint_resistance": {
-          "score": 1.0,
-          "weight": 5.0,
-          "points": 5.0
-        },
-        "protocol_history": {
-          "score": 0.52,
-          "weight": 15.0,
-          "points": 7.8
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 5.0,
-      "speed_kbps": 378.0,
-      "fingerprint_resistance": "high",
+      "stability_bonus": 4.0,
+      "speed_kbps": 551.2,
+      "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "hysteria2-1853331471",
-      "server": "129.213.91.185",
-      "type": "hysteria2",
+      "tag": "trojan-1931858184",
+      "server": "216.152.155.23",
+      "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 332.6,
-      "jitter_ms": 715.6,
+      "latency_ms": 281.3,
+      "jitter_ms": 620.1,
+      "score": 70.33,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.8506,
+          "weight": 25.0,
+          "points": 21.27
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9334,
+          "weight": 10.0,
+          "points": 9.33
+        },
+        "speed": {
+          "score": 1.0,
+          "weight": 10.0,
+          "points": 10.0
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 523.5,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1932467274",
+      "server": "66.163.122.25",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 258.3,
+      "jitter_ms": 643.6,
+      "score": 68.3,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.872,
+          "weight": 25.0,
+          "points": 21.8
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.7774,
+          "weight": 10.0,
+          "points": 7.77
+        },
+        "speed": {
+          "score": 1.0,
+          "weight": 10.0,
+          "points": 10.0
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 3.0,
+      "speed_kbps": 633.6,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965352",
+      "server": "216.152.155.59",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 326.9,
+      "jitter_ms": 566.9,
       "score": 67.27,
       "score_breakdown": {
         "latency": {
-          "score": 0.8031,
+          "score": 0.8084,
           "weight": 25.0,
-          "points": 20.08
+          "points": 20.21
         },
         "jitter": {
           "score": 0.0,
@@ -1690,50 +1727,50 @@
           "points": 0.0
         },
         "tcp": {
+          "score": 0.8333,
+          "weight": 10.0,
+          "points": 8.33
+        },
+        "speed": {
           "score": 1.0,
           "weight": 10.0,
           "points": 10.0
         },
-        "speed": {
-          "score": 0.6851,
-          "weight": 10.0,
-          "points": 6.85
-        },
         "fingerprint_resistance": {
-          "score": 0.7,
+          "score": 0.5,
           "weight": 5.0,
-          "points": 3.5
+          "points": 2.5
         },
         "protocol_history": {
-          "score": 0.6429,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 9.64
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 345.7,
-      "fingerprint_resistance": "medium",
+      "stability_bonus": 3.0,
+      "speed_kbps": 576.5,
+      "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "vless-1850176813",
-      "server": "45.32.69.110",
-      "type": "vless",
+      "tag": "trojan-1929965364",
+      "server": "216.152.155.158",
+      "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 328.8,
-      "jitter_ms": 707.7,
-      "score": 66.82,
+      "latency_ms": 336.8,
+      "jitter_ms": 561.2,
+      "score": 65.58,
       "score_breakdown": {
         "latency": {
-          "score": 0.8067,
+          "score": 0.7993,
           "weight": 25.0,
-          "points": 20.17
+          "points": 19.98
         },
         "jitter": {
           "score": 0.0,
@@ -1741,34 +1778,187 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 0.9131,
+          "score": 0.6099,
           "weight": 10.0,
-          "points": 9.13
+          "points": 6.1
         },
         "speed": {
-          "score": 0.7518,
+          "score": 0.9765,
           "weight": 10.0,
-          "points": 7.52
+          "points": 9.77
         },
         "fingerprint_resistance": {
-          "score": 1.0,
+          "score": 0.5,
           "weight": 5.0,
-          "points": 5.0
+          "points": 2.5
         },
         "protocol_history": {
-          "score": 0.52,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 7.8
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 378.4,
-      "fingerprint_resistance": "high",
+      "stability_bonus": 4.0,
+      "speed_kbps": 488.5,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965353",
+      "server": "66.163.122.113",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 326.7,
+      "jitter_ms": 598.6,
+      "score": 65.46,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.8086,
+          "weight": 25.0,
+          "points": 20.21
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9524,
+          "weight": 10.0,
+          "points": 9.52
+        },
+        "speed": {
+          "score": 1.0,
+          "weight": 10.0,
+          "points": 10.0
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 0.0,
+      "speed_kbps": 846.2,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1931228942",
+      "server": "216.152.155.176",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 281.9,
+      "jitter_ms": 618.1,
+      "score": 64.88,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.8501,
+          "weight": 25.0,
+          "points": 21.25
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9079,
+          "weight": 10.0,
+          "points": 9.08
+        },
+        "speed": {
+          "score": 0.4818,
+          "weight": 10.0,
+          "points": 4.82
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 246.1,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965362",
+      "server": "66.163.114.166",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 352.2,
+      "jitter_ms": 614.8,
+      "score": 64.29,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.785,
+          "weight": 25.0,
+          "points": 19.62
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9233,
+          "weight": 10.0,
+          "points": 9.23
+        },
+        "speed": {
+          "score": 0.5714,
+          "weight": 10.0,
+          "points": 5.71
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 290.0,
+      "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
@@ -1777,29 +1967,29 @@
       "server": "8.209.247.109",
       "type": "hysteria2",
       "source": "Au1rxx-base64",
-      "latency_ms": 252.8,
-      "jitter_ms": 185.4,
-      "score": 66.77,
+      "latency_ms": 383.6,
+      "jitter_ms": 332.0,
+      "score": 64.06,
       "score_breakdown": {
         "latency": {
-          "score": 0.877,
+          "score": 0.7559,
           "weight": 25.0,
-          "points": 21.92
+          "points": 18.9
         },
         "jitter": {
-          "score": 0.5364,
+          "score": 0.1699,
           "weight": 15.0,
-          "points": 8.05
+          "points": 2.55
         },
         "tcp": {
-          "score": 0.3805,
+          "score": 0.8081,
           "weight": 10.0,
-          "points": 3.81
+          "points": 8.08
         },
         "speed": {
-          "score": 0.4149,
+          "score": 0.2835,
           "weight": 10.0,
-          "points": 4.15
+          "points": 2.83
         },
         "fingerprint_resistance": {
           "score": 0.8,
@@ -1807,50 +1997,305 @@
           "points": 4.0
         },
         "protocol_history": {
-          "score": 0.6429,
+          "score": 0.8333,
           "weight": 15.0,
-          "points": 9.64
+          "points": 12.5
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 3.0,
-      "speed_kbps": 213.3,
+      "stability_bonus": 4.0,
+      "speed_kbps": 148.9,
       "fingerprint_resistance": "medium",
       "netflix": false,
       "chatgpt": true
     },
     {
-      "tag": "trojan-1832863498",
-      "server": "45.32.52.173",
+      "tag": "trojan-1932477922",
+      "server": "66.163.114.114",
       "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 348.4,
-      "jitter_ms": 282.0,
-      "score": 66.33,
+      "latency_ms": 353.5,
+      "jitter_ms": 604.4,
+      "score": 63.87,
       "score_breakdown": {
         "latency": {
-          "score": 0.7885,
+          "score": 0.7838,
           "weight": 25.0,
-          "points": 19.71
+          "points": 19.59
         },
         "jitter": {
-          "score": 0.2949,
+          "score": 0.0,
           "weight": 15.0,
-          "points": 4.42
+          "points": 0.0
         },
         "tcp": {
-          "score": 0.8568,
+          "score": 0.9996,
           "weight": 10.0,
-          "points": 8.57
+          "points": 10.0
         },
         "speed": {
-          "score": 0.2612,
+          "score": 0.4547,
           "weight": 10.0,
-          "points": 2.61
+          "points": 4.55
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 232.8,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965351",
+      "server": "66.163.114.106",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 355.2,
+      "jitter_ms": 622.7,
+      "score": 63.42,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.7822,
+          "weight": 25.0,
+          "points": 19.56
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9244,
+          "weight": 10.0,
+          "points": 9.24
+        },
+        "speed": {
+          "score": 0.4892,
+          "weight": 10.0,
+          "points": 4.89
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 249.7,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965346",
+      "server": "66.163.114.245",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 344.6,
+      "jitter_ms": 612.5,
+      "score": 63.14,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.792,
+          "weight": 25.0,
+          "points": 19.8
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9017,
+          "weight": 10.0,
+          "points": 9.02
+        },
+        "speed": {
+          "score": 0.4592,
+          "weight": 10.0,
+          "points": 4.59
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 235.0,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1932467277",
+      "server": "66.163.114.126",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 351.4,
+      "jitter_ms": 606.8,
+      "score": 62.94,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.7857,
+          "weight": 25.0,
+          "points": 19.64
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9263,
+          "weight": 10.0,
+          "points": 9.26
+        },
+        "speed": {
+          "score": 0.431,
+          "weight": 10.0,
+          "points": 4.31
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 221.2,
+      "fingerprint_resistance": "low",
+      "netflix": true,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1929965361",
+      "server": "216.238.80.100",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 406.9,
+      "jitter_ms": 716.4,
+      "score": 62.91,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.7344,
+          "weight": 25.0,
+          "points": 18.36
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9864,
+          "weight": 10.0,
+          "points": 9.86
+        },
+        "speed": {
+          "score": 0.4959,
+          "weight": 10.0,
+          "points": 4.96
+        },
+        "fingerprint_resistance": {
+          "score": 0.5,
+          "weight": 5.0,
+          "points": 2.5
+        },
+        "protocol_history": {
+          "score": 0.802,
+          "weight": 15.0,
+          "points": 12.03
+        },
+        "source_history": {
+          "score": 0.56,
+          "weight": 20.0,
+          "points": 11.2
+        }
+      },
+      "stability_bonus": 4.0,
+      "speed_kbps": 253.0,
+      "fingerprint_resistance": "low",
+      "netflix": false,
+      "chatgpt": true
+    },
+    {
+      "tag": "trojan-1827955817",
+      "server": "69.164.240.85",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 520.7,
+      "jitter_ms": 1346.3,
+      "score": 62.67,
+      "score_breakdown": {
+        "latency": {
+          "score": 0.6289,
+          "weight": 25.0,
+          "points": 15.72
+        },
+        "jitter": {
+          "score": 0.0,
+          "weight": 15.0,
+          "points": 0.0
+        },
+        "tcp": {
+          "score": 0.9462,
+          "weight": 10.0,
+          "points": 9.46
+        },
+        "speed": {
+          "score": 0.8263,
+          "weight": 10.0,
+          "points": 8.26
         },
         "fingerprint_resistance": {
           "score": 0.4,
@@ -1858,35 +2303,35 @@
           "points": 2.0
         },
         "protocol_history": {
-          "score": 0.7882,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 11.82
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 138.0,
+      "stability_bonus": 4.0,
+      "speed_kbps": 414.9,
       "fingerprint_resistance": "low",
-      "netflix": false,
+      "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "http-167.88.60.242",
-      "server": "167.88.60.242",
-      "type": "http",
-      "source": "ermaozi",
-      "latency_ms": 306.9,
-      "jitter_ms": 658.4,
-      "score": 66.13,
+      "tag": "trojan-1929965327",
+      "server": "216.152.155.131",
+      "type": "trojan",
+      "source": "Au1rxx-base64",
+      "latency_ms": 332.3,
+      "jitter_ms": 743.7,
+      "score": 62.64,
       "score_breakdown": {
         "latency": {
-          "score": 0.827,
+          "score": 0.8035,
           "weight": 25.0,
-          "points": 20.67
+          "points": 20.09
         },
         "jitter": {
           "score": 0.0,
@@ -1894,14 +2339,14 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 0.0,
+          "score": 1.0,
           "weight": 10.0,
-          "points": 0.0
+          "points": 10.0
         },
         "speed": {
-          "score": 0.8531,
+          "score": 0.4818,
           "weight": 10.0,
-          "points": 8.53
+          "points": 4.82
         },
         "fingerprint_resistance": {
           "score": 0.5,
@@ -1909,35 +2354,35 @@
           "points": 2.5
         },
         "protocol_history": {
-          "score": 0.8315,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 12.47
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.848,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 16.96
+          "points": 11.2
         }
       },
-      "stability_bonus": 5.0,
-      "speed_kbps": 428.0,
+      "stability_bonus": 2.0,
+      "speed_kbps": 246.1,
       "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "trojan-1929965338",
+      "tag": "trojan-1932467279",
       "server": "66.163.112.242",
       "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 292.5,
-      "jitter_ms": 593.3,
-      "score": 63.83,
+      "latency_ms": 334.0,
+      "jitter_ms": 620.3,
+      "score": 62.46,
       "score_breakdown": {
         "latency": {
-          "score": 0.8403,
+          "score": 0.8018,
           "weight": 25.0,
-          "points": 21.01
+          "points": 20.05
         },
         "jitter": {
           "score": 0.0,
@@ -1945,14 +2390,14 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 0.6893,
+          "score": 0.7977,
           "weight": 10.0,
-          "points": 6.89
+          "points": 7.98
         },
         "speed": {
-          "score": 0.6408,
+          "score": 0.4698,
           "weight": 10.0,
-          "points": 6.41
+          "points": 4.7
         },
         "fingerprint_resistance": {
           "score": 0.5,
@@ -1960,33 +2405,33 @@
           "points": 2.5
         },
         "protocol_history": {
-          "score": 0.7882,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 11.82
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 3.0,
-      "speed_kbps": 324.0,
+      "stability_bonus": 4.0,
+      "speed_kbps": 240.2,
       "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "vless-1894805191",
-      "server": "172.236.227.60",
-      "type": "vless",
+      "tag": "trojan-1929965349",
+      "server": "66.163.112.121",
+      "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 346.5,
-      "jitter_ms": 746.6,
-      "score": 63.77,
+      "latency_ms": 346.4,
+      "jitter_ms": 627.6,
+      "score": 61.94,
       "score_breakdown": {
         "latency": {
-          "score": 0.7903,
+          "score": 0.7904,
           "weight": 25.0,
           "points": 19.76
         },
@@ -1996,116 +2441,14 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 0.8996,
+          "score": 0.8722,
           "weight": 10.0,
-          "points": 9.0
+          "points": 8.72
         },
         "speed": {
-          "score": 0.7012,
+          "score": 0.4731,
           "weight": 10.0,
-          "points": 7.01
-        },
-        "fingerprint_resistance": {
-          "score": 1.0,
-          "weight": 5.0,
-          "points": 5.0
-        },
-        "protocol_history": {
-          "score": 0.52,
-          "weight": 15.0,
-          "points": 7.8
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 3.0,
-      "speed_kbps": 353.6,
-      "fingerprint_resistance": "high",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "vless-1828373750",
-      "server": "51.81.203.63",
-      "type": "vless",
-      "source": "Au1rxx-base64",
-      "latency_ms": 399.8,
-      "jitter_ms": 1046.0,
-      "score": 63.52,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.7409,
-          "weight": 25.0,
-          "points": 18.52
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 1.0,
-          "weight": 10.0,
-          "points": 10.0
-        },
-        "speed": {
-          "score": 1.0,
-          "weight": 10.0,
-          "points": 10.0
-        },
-        "fingerprint_resistance": {
-          "score": 1.0,
-          "weight": 5.0,
-          "points": 5.0
-        },
-        "protocol_history": {
-          "score": 0.52,
-          "weight": 15.0,
-          "points": 7.8
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 0.0,
-      "speed_kbps": 751.0,
-      "fingerprint_resistance": "high",
-      "netflix": false,
-      "chatgpt": true
-    },
-    {
-      "tag": "trojan-1929965347",
-      "server": "66.163.114.126",
-      "type": "trojan",
-      "source": "Au1rxx-base64",
-      "latency_ms": 278.9,
-      "jitter_ms": 613.5,
-      "score": 63.25,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8529,
-          "weight": 25.0,
-          "points": 21.32
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.3334,
-          "weight": 10.0,
-          "points": 3.33
-        },
-        "speed": {
-          "score": 0.908,
-          "weight": 10.0,
-          "points": 9.08
+          "points": 4.73
         },
         "fingerprint_resistance": {
           "score": 0.5,
@@ -2113,35 +2456,35 @@
           "points": 2.5
         },
         "protocol_history": {
-          "score": 0.7882,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 11.82
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
       "stability_bonus": 3.0,
-      "speed_kbps": 454.9,
+      "speed_kbps": 241.8,
       "fingerprint_resistance": "low",
       "netflix": true,
       "chatgpt": true
     },
     {
-      "tag": "trojan-1930077596",
-      "server": "66.163.114.106",
+      "tag": "trojan-1930077586",
+      "server": "66.163.112.142",
       "type": "trojan",
       "source": "Au1rxx-base64",
-      "latency_ms": 276.9,
-      "jitter_ms": 605.4,
-      "score": 62.68,
+      "latency_ms": 367.4,
+      "jitter_ms": 624.3,
+      "score": 61.91,
       "score_breakdown": {
         "latency": {
-          "score": 0.8548,
+          "score": 0.771,
           "weight": 25.0,
-          "points": 21.37
+          "points": 19.27
         },
         "jitter": {
           "score": 0.0,
@@ -2149,14 +2492,14 @@
           "points": 0.0
         },
         "tcp": {
-          "score": 0.3328,
+          "score": 0.8967,
           "weight": 10.0,
-          "points": 3.33
+          "points": 8.97
         },
         "speed": {
-          "score": 0.8461,
+          "score": 0.3937,
           "weight": 10.0,
-          "points": 8.46
+          "points": 3.94
         },
         "fingerprint_resistance": {
           "score": 0.5,
@@ -2164,377 +2507,20 @@
           "points": 2.5
         },
         "protocol_history": {
-          "score": 0.7882,
+          "score": 0.802,
           "weight": 15.0,
-          "points": 11.82
+          "points": 12.03
         },
         "source_history": {
-          "score": 0.61,
+          "score": 0.56,
           "weight": 20.0,
-          "points": 12.2
+          "points": 11.2
         }
       },
-      "stability_bonus": 3.0,
-      "speed_kbps": 424.6,
+      "stability_bonus": 4.0,
+      "speed_kbps": 202.9,
       "fingerprint_resistance": "low",
       "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "vless-1930393106",
-      "server": "212.103.62.233",
-      "type": "vless",
-      "source": "Au1rxx-base64",
-      "latency_ms": 333.4,
-      "jitter_ms": 556.5,
-      "score": 61.8,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8024,
-          "weight": 25.0,
-          "points": 20.06
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.9116,
-          "weight": 10.0,
-          "points": 9.12
-        },
-        "speed": {
-          "score": 0.4622,
-          "weight": 10.0,
-          "points": 4.62
-        },
-        "fingerprint_resistance": {
-          "score": 1.0,
-          "weight": 5.0,
-          "points": 5.0
-        },
-        "protocol_history": {
-          "score": 0.52,
-          "weight": 15.0,
-          "points": 7.8
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 3.0,
-      "speed_kbps": 236.5,
-      "fingerprint_resistance": "high",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "@v2ray313",
-      "server": "resources.findlocaljobnetworkandbuildcommunityconnections.com",
-      "type": "trojan",
-      "source": "Surfboard-tg-mixed",
-      "latency_ms": 217.6,
-      "jitter_ms": 554.4,
-      "score": 61.38,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.9096,
-          "weight": 25.0,
-          "points": 22.74
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.0,
-          "weight": 10.0,
-          "points": 0.0
-        },
-        "speed": {
-          "score": 1.0,
-          "weight": 10.0,
-          "points": 10.0
-        },
-        "fingerprint_resistance": {
-          "score": 0.5,
-          "weight": 5.0,
-          "points": 2.5
-        },
-        "protocol_history": {
-          "score": 0.7882,
-          "weight": 15.0,
-          "points": 11.82
-        },
-        "source_history": {
-          "score": 0.716,
-          "weight": 20.0,
-          "points": 14.32
-        }
-      },
-      "stability_bonus": 0.0,
-      "speed_kbps": 1027.9,
-      "fingerprint_resistance": "low",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "shadowsocks-1827146667",
-      "server": "173.244.56.9",
-      "type": "shadowsocks",
-      "source": "Au1rxx-base64",
-      "latency_ms": 292.3,
-      "jitter_ms": 618.9,
-      "score": 61.26,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8405,
-          "weight": 25.0,
-          "points": 21.01
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 1.0,
-          "weight": 10.0,
-          "points": 10.0
-        },
-        "speed": {
-          "score": 0.5949,
-          "weight": 10.0,
-          "points": 5.95
-        },
-        "fingerprint_resistance": {
-          "score": 0.2,
-          "weight": 5.0,
-          "points": 1.0
-        },
-        "protocol_history": {
-          "score": 0.407,
-          "weight": 15.0,
-          "points": 6.1
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 5.0,
-      "speed_kbps": 301.5,
-      "fingerprint_resistance": "none",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "trojan-1924748552",
-      "server": "www.findlocaljobnetworkandbuildcommunityconnections.com",
-      "type": "trojan",
-      "source": "Au1rxx-base64",
-      "latency_ms": 219.7,
-      "jitter_ms": 554.3,
-      "score": 61.21,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.9077,
-          "weight": 25.0,
-          "points": 22.69
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.0,
-          "weight": 10.0,
-          "points": 0.0
-        },
-        "speed": {
-          "score": 1.0,
-          "weight": 10.0,
-          "points": 10.0
-        },
-        "fingerprint_resistance": {
-          "score": 0.5,
-          "weight": 5.0,
-          "points": 2.5
-        },
-        "protocol_history": {
-          "score": 0.7882,
-          "weight": 15.0,
-          "points": 11.82
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 2.0,
-      "speed_kbps": 1140.1,
-      "fingerprint_resistance": "low",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "shadowsocks-1827146270",
-      "server": "149.22.87.240",
-      "type": "shadowsocks",
-      "source": "Au1rxx-base64",
-      "latency_ms": 296.9,
-      "jitter_ms": 229.7,
-      "score": 61.05,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8362,
-          "weight": 25.0,
-          "points": 20.91
-        },
-        "jitter": {
-          "score": 0.4257,
-          "weight": 15.0,
-          "points": 6.38
-        },
-        "tcp": {
-          "score": 0.8698,
-          "weight": 10.0,
-          "points": 8.7
-        },
-        "speed": {
-          "score": 0.2763,
-          "weight": 10.0,
-          "points": 2.76
-        },
-        "fingerprint_resistance": {
-          "score": 0.2,
-          "weight": 5.0,
-          "points": 1.0
-        },
-        "protocol_history": {
-          "score": 0.407,
-          "weight": 15.0,
-          "points": 6.1
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 3.0,
-      "speed_kbps": 145.4,
-      "fingerprint_resistance": "none",
-      "netflix": false,
-      "chatgpt": true
-    },
-    {
-      "tag": "trojan-1929965350",
-      "server": "66.163.112.13",
-      "type": "trojan",
-      "source": "Au1rxx-base64",
-      "latency_ms": 291.4,
-      "jitter_ms": 587.7,
-      "score": 60.95,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.8413,
-          "weight": 25.0,
-          "points": 21.03
-        },
-        "jitter": {
-          "score": 0.0,
-          "weight": 15.0,
-          "points": 0.0
-        },
-        "tcp": {
-          "score": 0.4091,
-          "weight": 10.0,
-          "points": 4.09
-        },
-        "speed": {
-          "score": 0.6314,
-          "weight": 10.0,
-          "points": 6.31
-        },
-        "fingerprint_resistance": {
-          "score": 0.5,
-          "weight": 5.0,
-          "points": 2.5
-        },
-        "protocol_history": {
-          "score": 0.7882,
-          "weight": 15.0,
-          "points": 11.82
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 3.0,
-      "speed_kbps": 319.4,
-      "fingerprint_resistance": "low",
-      "netflix": true,
-      "chatgpt": true
-    },
-    {
-      "tag": "vless-1874245598",
-      "server": "45.76.98.127",
-      "type": "vless",
-      "source": "Au1rxx-base64",
-      "latency_ms": 404.4,
-      "jitter_ms": 335.4,
-      "score": 60.92,
-      "score_breakdown": {
-        "latency": {
-          "score": 0.7366,
-          "weight": 25.0,
-          "points": 18.42
-        },
-        "jitter": {
-          "score": 0.1616,
-          "weight": 15.0,
-          "points": 2.42
-        },
-        "tcp": {
-          "score": 0.9745,
-          "weight": 10.0,
-          "points": 9.75
-        },
-        "speed": {
-          "score": 0.2327,
-          "weight": 10.0,
-          "points": 2.33
-        },
-        "fingerprint_resistance": {
-          "score": 1.0,
-          "weight": 5.0,
-          "points": 5.0
-        },
-        "protocol_history": {
-          "score": 0.52,
-          "weight": 15.0,
-          "points": 7.8
-        },
-        "source_history": {
-          "score": 0.61,
-          "weight": 20.0,
-          "points": 12.2
-        }
-      },
-      "stability_bonus": 3.0,
-      "speed_kbps": 124.0,
-      "fingerprint_resistance": "high",
-      "netflix": false,
       "chatgpt": true
     }
   ],

@@ -1,15 +1,15 @@
 {
   "scanned_projects": 5,
   "failed_projects": 1,
-  "total_discovered_nodes": 18881,
-  "unique_nodes": 16507,
+  "total_discovered_nodes": 18898,
+  "unique_nodes": 16468,
   "protocol_distribution": {
-    "ss": 3872,
-    "trojan": 1739,
-    "vmess": 2776,
+    "ss": 3864,
+    "trojan": 1760,
+    "vmess": 2742,
     "ssr": 70,
-    "vless": 10102,
-    "hysteria2": 316,
+    "vless": 10138,
+    "hysteria2": 318,
     "hysteria": 4,
     "tuic": 2
   },
