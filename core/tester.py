@@ -26,8 +26,9 @@ BASE_TEST_TARGETS = [
     ("https://www.youtube.com/generate_204",   "204"),
     ("https://www.google.com/generate_204",    "204"),
     ("https://www.baidu.com/robots.txt",       "cn-block"),
-    ("https://www.cloudflare.com/cdn-cgi/trace", "geo"),
+    ("https://ipinfo.io/json",                 "geo"),
 ]
+TEST_TARGETS = BASE_TEST_TARGETS
 SPEED_TEST_URL_TEMPLATE = "https://speed.cloudflare.com/__down?bytes={bytes}"
 SPEED_REQUIRED_BYTES = 100_000
 SPEED_TIMEOUT_SEC = 8

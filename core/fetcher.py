@@ -206,7 +206,7 @@ async def fetch_all(
             # Keep retries bounded and isolated per source.
             for attempt in range(max(retries, 0) + 1):
                 result = await _wrapped(session, src)
-                if result.success or attempt >= retries:
+                if getattr(result, "success", False) or attempt >= retries:
                     return result
             return FetchResult(source=src, success=False, error="exhausted")
 

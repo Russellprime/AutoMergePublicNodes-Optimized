@@ -244,14 +244,16 @@ async def run(args):
 
     # 2) 抓取
     print(f"[2/7] Fetching sources (concurrency={args.fetch_concurrency}, overall_timeout={args.fetch_overall_timeout}s)")
-    fr_list = await fetch_all(
-        sources,
-        concurrency=args.fetch_concurrency,
-        timeout=args.fetch_timeout,
-        overall_timeout=args.fetch_overall_timeout,
-        retries=fetch_retries,
-        rate_limit_per_sec=fetch_rate_limit_per_sec,
-    )
+    fetch_kwargs = {
+        "concurrency": args.fetch_concurrency,
+        "timeout": args.fetch_timeout,
+        "overall_timeout": args.fetch_overall_timeout,
+    }
+    if hasattr(args, "fetch_retries"):
+        fetch_kwargs["retries"] = fetch_retries
+    if hasattr(args, "fetch_rate_limit_per_sec"):
+        fetch_kwargs["rate_limit_per_sec"] = fetch_rate_limit_per_sec
+    fr_list = await fetch_all(sources, **fetch_kwargs)
     stage_durations["fetch"] = round(time.time() - stage_start, 1)
     stage_start = time.time()
 
