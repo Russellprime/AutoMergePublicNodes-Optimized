@@ -138,19 +138,19 @@ MIT
 
 | 指标 | 数值 |
 | --- | --- |
-| Updated | 2026-10-27 08:03:08 |
+| Updated | 2026-10-27 08:16:53 |
 | Version | 2.5.0 |
 | Sources | 88/107 |
 | Raw nodes | 96374 |
-| Unique nodes | 26563 |
+| Unique nodes | 26565 |
 | TCP pass | 3000 |
-| Real-test pass | 113 |
-| Real-test pass rate | 3.8% |
-| Top links output | 113 |
+| Real-test pass | 108 |
+| Real-test pass rate | 3.6% |
+| Top links output | 108 |
 | Clean IPs | 20 |
-| Verified output | 113 |
-| Global output | 116 |
-| All output | 26563 |
+| Verified output | 108 |
+| Global output | 114 |
+| All output | 26565 |
 
 > Output guard: none. Full report: `output/health_report.md`, `output/stats.json`.
 
@@ -158,21 +158,21 @@ MIT
 
 | Score | Protocol | Latency(ms) | Source |
 | --- | --- | --- | --- |
-| 66.04 | vless | 290.0 | Au1rxx-base64 |
-| 65.85 | trojan | 272.6 | Au1rxx-base64 |
-| 65.67 | trojan | 280.1 | Au1rxx-base64 |
-| 65.56 | trojan | 284.9 | Au1rxx-base64 |
-| 65.33 | http | 363.4 | ermaozi |
+| 73.19 | vless | 203.5 | Au1rxx-base64 |
+| 70.63 | hysteria2 | 262.7 | Au1rxx-base64 |
+| 69.93 | vless | 221.4 | Au1rxx-base64 |
+| 69.69 | hysteria2 | 268.5 | Au1rxx-base64 |
+| 69.64 | vless | 234.1 | Au1rxx-base64 |
 
 ### Top Source Quality
 
 | Source | Score | Tested | Recommendation |
 | --- | --- | --- | --- |
-| ermaozi | 0.852 | 91 | prefer |
-| Au1rxx-base64 | 0.623 | 357 | observe |
-| mheidari-all | 0.611 | 79 | observe |
-| Surfboard-tg-mixed | 0.286 | 13 | observe |
-| 10ium-ScrapeCategorize-Vless | 0.255 | 0 | observe |
+| ermaozi | 0.848 | 89 | prefer |
+| Surfboard-tg-mixed | 0.716 | 20 | prefer |
+| DeltaKronecker-all | 0.664 | 9 | observe |
+| Au1rxx-base64 | 0.61 | 342 | observe |
+| mheidari-all | 0.61 | 81 | observe |
 
 <!-- AUTONODES_STATS_END -->
 
