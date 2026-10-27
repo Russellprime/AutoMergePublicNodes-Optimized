@@ -136,19 +136,21 @@ MIT
 <!-- AUTONODES_STATS_START -->
 ## Current Run Status
 
-| Metric | Value |
+| 指标 | 数值 |
 | --- | --- |
-| Updated | 2026-10-15 16:47:13 |
-| Version | 2.4.0 |
-| Sources | 93/107 |
-| Raw nodes | 100051 |
-| Unique nodes | 27919 |
+| Updated | 2026-10-27 06:08:23 |
+| Version | 2.5.0 |
+| Sources | 88/107 |
+| Raw nodes | 96324 |
+| Unique nodes | 26586 |
 | TCP pass | 3000 |
-| Real-test pass | 89 |
-| Real-test pass rate | 3.0% |
-| Verified output | 89 |
-| Global output | 94 |
-| All output | 27919 |
+| Real-test pass | 104 |
+| Real-test pass rate | 3.5% |
+| Top links output | 104 |
+| Clean IPs | 20 |
+| Verified output | 104 |
+| Global output | 106 |
+| All output | 26586 |
 
 > Output guard: none. Full report: `output/health_report.md`, `output/stats.json`.
 
@@ -156,20 +158,21 @@ MIT
 
 | Score | Protocol | Latency(ms) | Source |
 | --- | --- | --- | --- |
-| 74.73 | vless | 269.8 | Au1rxx-base64 |
-| 74.56 | shadowsocks | 274.2 | Au1rxx-base64 |
-| 74.35 | http | 170.6 | ermaozi |
-| 73.75 | http | 196.5 | ermaozi |
-| 73.15 | shadowsocks | 292.3 | Au1rxx-base64 |
+| 73.99 | vless | 268.0 | Au1rxx-base64 |
+| 72.39 | vless | 342.4 | Au1rxx-base64 |
+| 72.36 | vless | 337.1 | Au1rxx-base64 |
+| 72.29 | vless | 293.9 | Au1rxx-base64 |
+| 72.26 | shadowsocks | 254.0 | Au1rxx-base64 |
 
 ### Top Source Quality
 
 | Source | Score | Tested | Recommendation |
 | --- | --- | --- | --- |
-| ermaozi | 0.984 | 69 | prefer |
-| Au1rxx-base64 | 0.709 | 308 | prefer |
-| mheidari-all | 0.633 | 14 | observe |
-| Surfboard-tg-mixed | 0.391 | 2 | observe |
-| Barabama-yudou | 0.262 | 1 | observe |
+| ermaozi | 0.848 | 89 | prefer |
+| mheidari-all | 0.565 | 134 | observe |
+| Au1rxx-base64 | 0.543 | 377 | observe |
+| Surfboard-tg-mixed | 0.3 | 5 | observe |
+| 10ium-ScrapeCategorize-Vless | 0.255 | 0 | observe |
 
 <!-- AUTONODES_STATS_END -->
+
