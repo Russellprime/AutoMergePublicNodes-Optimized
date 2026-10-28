@@ -2,7 +2,21 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 proxies:
-- name: 🇺🇸 [263.9ms +/-588ms] trojan-1930077596
+- name: 🇺🇸 [346.7ms +/-761ms] vless-1877172710
+  server: 195.123.235.183
+  port: 443
+  type: vless
+  uuid: c14ec728-3eca-4750-87fc-fd1e6aeb81d5
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: gateway.icloud.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: H3R3BUAl7thrIZsznTbb-eRREIjQOH2f3WO0oTN7OGY
+    short-id: a0e2a6074c6456b0
+  client-fingerprint: random
+- name: 🇺🇸 [578.2ms +/-1530ms] trojan-1929965351
   server: 66.163.114.106
   port: 443
   type: trojan
@@ -10,357 +24,89 @@ proxies:
   sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 [264.6ms +/-601ms] trojan-1929965362
-  server: 66.163.114.166
-  port: 443
+- name: 🇺🇸 [455.2ms +/-1111ms] trojan-1827613948
+  server: 69.164.240.85
+  port: 50875
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
+  password: nwilryafgkyvuxauc8pz
+  sni: 69.164.240.85
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 [268.6ms +/-605ms] trojan-1932448326
-  server: 66.163.114.114
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 [265.2ms +/-603ms] trojan-1929965354
-  server: 66.163.114.45
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: '[247.9ms +/-554ms] 🇺🇸US_10|1.6MB/s'
-  server: 193.239.236.134
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[448.8ms +/-1161ms] 🇺🇸US_8|3.0MB/s'
-  server: 154.47.25.78
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [308.4ms +/-601ms] trojan-1935007697
-  server: 66.163.112.121
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 [305.6ms +/-601ms] trojan-1929965329
-  server: 66.163.112.31
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 [303.1ms +/-602ms] trojan-1929965344
-  server: 66.163.112.76
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 [323.0ms +/-626ms] vless-1880433481
-  server: 45.76.172.197
+- name: 🇺🇸 [444.8ms +/-989ms] vless-1835128666
+  server: 45.63.53.81
   port: 443
   type: vless
-  uuid: b256c867-a020-48e0-be80-1b079f2613a2
+  uuid: c512dcbd-1847-40a2-9c99-989c8bfe4717
   udp: true
   tls: true
   servername: itunes.apple.com
   skip-cert-verify: true
   reality-opts:
-    public-key: Ag8SQ5QdqfHO9pKWA93kqGmH5EQo7Xm5Z4RbPnwPBBE
-    short-id: ff3597db
+    public-key: 6nTROV2ELz-3vNUl0A00hp378QngpYABrPgjCpUknD0
+    short-id: f436f707
   client-fingerprint: chrome
   network: ws
   ws-opts:
     path: /ws
-    headers: {}
-- name: 🇺🇸 [418.9ms +/-693ms] trojan-1929965338
-  server: 66.163.112.242
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: '[348.8ms +/-718ms] 🇺🇸US_12|1.6MB/s'
-  server: 68.235.56.59
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[394.0ms +/-252ms] @DeltaKroneckerGithub'
-  server: 125.227.86.45
-  port: 443
-  type: trojan
-  password: 0a9f1f5a397bd427
-  sni: TG.freecodes
-  skip-cert-verify: true
-  udp: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: db
-- name: '[583.2ms +/-1478ms] 🇺🇸US_13|2.9MB/s'
-  server: 68.235.56.51
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [369.6ms +/-742ms] Channel
-  server: 169.197.140.169
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  skip-cert-verify: true
-  udp: true
-- name: '[416.2ms +/-773ms] US_speednode_0039'
-  server: 44.248.167.117
-  port: 8443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[412.6ms +/-953ms] 🇺🇸US_7|2.6MB/s'
-  server: 198.44.135.19
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [353.0ms +/-753ms] vless-1828372448
-  server: 185.95.231.156
-  port: 443
-  type: vless
-  uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
-    short-id: a3a578ab
-  client-fingerprint: chrome
-- name: '[587.0ms +/-1446ms] 🇺🇸US_9|3.1MB/s'
-  server: 149.88.21.140
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [259.5ms +/-570ms] trojan-1930077602
-  server: 216.152.155.54
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: '[414.2ms +/-832ms] 🇺🇸US_6|3.1MB/s'
-  server: 149.22.88.65
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[577.0ms +/-864ms] 🇬🇧GB_5|2.7MB/s'
-  server: 212.102.63.31
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[343.3ms +/-685ms] @DeltaKroneckerGithub'
-  server: 172.67.67.89
-  port: 443
-  type: vless
-  uuid: b7929486-4bbb-48b4-abbb-495c501b7296
-  udp: true
-  tls: true
-  servername: awsus.abcai.online
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
     headers:
-      Host: awsus.abcai.online
-- name: 🇺🇸 [298.1ms +/-653ms] trojan-1936051367
-  server: 216.152.155.59
+      Host: itunes.apple.com
+- name: 🇺🇸 [409.5ms +/-1078ms] hysteria2-1830343753
+  server: 129.213.91.185
+  port: 35013
+  type: hysteria2
+  password: 4291c983-c520-46ac-82cc-48f14bef573f
+  sni: 129.213.91.185
+  skip-cert-verify: true
+- name: 🇺🇸 [439.3ms +/-970ms] vless-1828293927
+  server: 169.40.42.168
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: '[623.6ms +/-1010ms] 🇬🇧GB_6|3.1MB/s'
-  server: 212.102.63.61
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [363.2ms +/-813ms] shadowsocks-1875129452
-  server: 95.215.201.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: '[616.8ms +/-873ms] 🇩🇪DE_3|2.4MB/s'
-  server: 87.249.132.97
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[549.6ms +/-836ms] IE_speednode_0013'
-  server: 34.249.214.108
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[633.5ms +/-1048ms] 🇬🇧GB_4|4.0MB/s'
-  server: 84.17.50.214
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [402.6ms +/-816ms] vless-1853340968
-  server: 15.204.97.197
-  port: 23576
   type: vless
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  servername: fuck.rkn
+  servername: yahoo.com
   skip-cert-verify: true
   reality-opts:
-    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
-    short-id: '01'
-  client-fingerprint: chrome
-- name: '[624.2ms +/-914ms] 🇳🇱NL_5|1.8MB/s'
-  server: 84.17.47.146
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [378.7ms +/-621ms] vless-1853340740
-  server: 15.204.97.214
-  port: 23576
-  type: vless
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: fuck.rkn
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
-    short-id: '01'
-  client-fingerprint: chrome
-- name: '[620.8ms +/-995ms] 🇬🇧GB_3|3.3MB/s'
-  server: 84.17.50.193
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[616.4ms +/-879ms] 🇩🇪DE_2|2.6MB/s'
-  server: 149.36.50.1
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸 [323.3ms +/-736ms] @DeltaKroneckerGithub
-  server: 216.9.225.189
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  client-fingerprint: ios
+- name: 🇺🇸 [290.8ms +/-585ms] shadowsocks-1827146667
+  server: 173.244.56.9
   port: 443
   type: ss
-  cipher: 2022-blake3-aes-256-gcm
-  password: Q2YsIzc5YkchSFjsqUZWrQAFtsSpqf7XxYxkG4+Jbsk=:zT1SecPttPY/XPW6NwjK5Wql+/6zbcGSDJK21Jk8uLo=
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-- name: '[637.6ms +/-1101ms] 🇮🇪IE_3|2.2MB/s'
-  server: 18.200.158.139
+- name: 🇯🇵 [376.4ms +/-297ms] shadowsocks-1827146287
+  server: 149.22.87.241
   port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[337.3ms +/-684ms] @DeltaKroneckerGithub'
-  server: 104.26.11.140
-  port: 443
-  type: vless
-  uuid: b7929486-4bbb-48b4-abbb-495c501b7296
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  tls: true
-  servername: awsus.abcai.online
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: awsus.abcai.online
-- name: '[399.6ms +/-801ms] @DeltaKroneckerGithub'
-  server: 104.17.107.118
+- name: 🇯🇵 [375.7ms +/-296ms] shadowsocks-1827146197
+  server: 149.22.87.204
   port: 443
-  type: vless
-  uuid: b7929486-4bbb-48b4-abbb-495c501b7296
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  tls: true
-  servername: awsus.abcai.online
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: awsus.abcai.online
-- name: '[704.6ms +/-1097ms] 🇩🇪DE_9|3.7MB/s'
-  server: 158.173.154.3
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[731.9ms +/-1219ms] 🇫🇷FR_5|2.2MB/s'
-  server: 149.102.245.65
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[701.9ms +/-1117ms] 🇧🇪BE_1|3.0MB/s'
-  server: 146.70.123.98
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[740.9ms +/-1132ms] 🇨🇿CZ_1|3.0MB/s'
-  server: 185.216.35.66
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[727.9ms +/-1153ms] 🇨🇭CH_1|1.1MB/s'
-  server: 149.88.27.46
+- name: 🇺🇸 [424.1ms +/-890ms] vless-1937733881
+  server: 156.229.160.98
   port: 9443
-  type: http
+  type: vless
+  uuid: 4a270d3e-27b4-497d-8c8c-28f1f54958d9
+  udp: true
+  flow: xtls-rprx-vision
   tls: true
+  servername: www.amazon.com
   skip-cert-verify: true
-- name: '[727.2ms +/-1012ms] 🇪🇪EE_1|3.3MB/s'
-  server: 95.153.31.66
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[758.4ms +/-1359ms] 🇬🇧GB_2|3.1MB/s|R002-260618'
-  server: 37.120.233.18
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇩🇰 [560.9ms +/-968ms] vless-1883443396
+  reality-opts:
+    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
+    short-id: b390142456517acc
+  client-fingerprint: chrome
+- name: 🇩🇰 [546.1ms +/-917ms] vless-1883443396
   server: 193.233.253.180
   port: 8444
   type: vless
@@ -376,250 +122,110 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: GunService
-- name: 🇧🇷 [787.5ms +/-1348ms] trojan-1930538342
-  server: 216.238.104.154
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
-  skip-cert-verify: true
-  udp: true
-- name: '[781.3ms +/-1233ms] 🇵🇱PL_2|2.4MB/s'
-  server: 37.120.156.18
+- name: '[351.3ms +/-861ms] http-121.127.34.82'
+  server: 121.127.34.82
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸 [654.5ms +/-1724ms] vless-1860511077
-  server: 45.138.100.248
-  port: 10443
+- name: 🇬🇧 [582.5ms +/-970ms] vless-1828531878
+  server: 51.89.194.151
+  port: 2053
   type: vless
-  uuid: ae908ff5-f749-402c-af25-e6e9aef4d6bb
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
   udp: true
-- name: '[753.7ms +/-1285ms] 🇮🇪IE_4|1.2MB/s'
-  server: 149.88.96.1
-  port: 443
-  type: http
   tls: true
-  skip-cert-verify: true
-- name: '[697.7ms +/-1133ms] FR_speednode_0012'
-  server: 82.65.162.76
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[813.2ms +/-1300ms] 🇵🇱PL_1|4.0MB/s'
-  server: 37.120.156.34
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[811.8ms +/-1480ms] 🇬🇧GB_9|2.2MB/s'
-  server: 84.233.178.33
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[726.7ms +/-1232ms] NL_speednode_0023'
-  server: 84.17.47.124
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[638.4ms +/-891ms] 🇩🇪DE_4|2.3MB/s'
-  server: 116.202.172.99
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[735.2ms +/-1283ms] FR_speednode_0008'
-  server: 51.159.225.197
-  port: 19362
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[704.3ms +/-1042ms] Channel'
-  server: 104.18.37.127
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.trusteeforward.com
-  skip-cert-verify: true
-  udp: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.trusteeforward.com
-- name: '[844.1ms +/-1005ms] 🇷🇺RU_1|2.4MB/s'
-  server: 46.29.166.134
-  port: 1446
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[682.7ms +/-1071ms] 🇩🇪DE_8|2.3MB/s'
-  server: 149.36.50.157
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[696.5ms +/-1100ms] 🇫🇷FR_4|1.7MB/s'
-  server: 84.235.228.156
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[782.6ms +/-1309ms] NL_speednode_0024'
-  server: 84.17.47.148
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[788.8ms +/-1385ms] NL_speednode_0027'
-  server: 84.17.47.123
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[700.5ms +/-1118ms] 🇩🇪DE_6|2.9MB/s'
-  server: 79.76.126.155
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[902.9ms +/-1419ms] 🇷🇴RO_1|2.2MB/s'
-  server: 135.136.1.2
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[790.5ms +/-1271ms] 🇮🇹IT_3|2.3MB/s'
-  server: 185.183.105.146
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇩🇪 [702.6ms +/-1203ms] vless-1854330919
-  server: 5.252.179.15
-  port: 443
-  type: vless
-  uuid: 0ab273e4-cea6-41d0-bbab-41071d2fc455
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.bing.com
+  servername: www.apple.com
   skip-cert-verify: true
   reality-opts:
-    public-key: XQB2zIgrhD8AtxgYFM8UiiWYt1sLVBLhMg1M4-sGMAY
-    short-id: 296f27de82dad7ff
-  client-fingerprint: qq
-- name: '[806.4ms +/-1330ms] DK_speednode_0006'
-  server: 158.173.154.1
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[713.1ms +/-1146ms] DE_speednode_0004'
-  server: 213.109.163.119
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[739.5ms +/-1268ms] 🇩🇪DE_1|1.3MB/s'
-  server: 79.127.156.177
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[740.5ms +/-1132ms] 🇸🇪SE_3|1.6MB/s'
-  server: 79.142.77.63
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[725.9ms +/-1110ms] 🇳🇱NL_4|2.3MB/s'
-  server: 149.36.51.161
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇮🇹 [521.8ms +/-733ms] shadowsocks-1827147481
-  server: 185.164.175.81
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: '[832.4ms +/-880ms] 🇸🇬SG_2|1.6MB/s'
-  server: 149.88.99.209
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[723.1ms +/-934ms] 🇷🇴RO_2|2.5MB/s'
-  server: 169.150.199.1
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[772.6ms +/-1364ms] 🇮🇪IE_2|2.6MB/s'
-  server: 149.88.96.12
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[786.3ms +/-1275ms] 🇸🇪SE_1|2.6MB/s'
-  server: 146.70.242.146
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[609.8ms +/-961ms] @DeltaKroneckerGithub'
-  server: 50.7.226.173
-  port: 443
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: d051f678212f9d54
+  client-fingerprint: random
+- name: 🇹🇷 [626.9ms +/-994ms] vless-1876710446
+  server: 62.133.63.45
+  port: 8444
   type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: a346c521-7a7f-452b-9356-a4893feb5982
+  udp: true
+  tls: true
+  servername: github.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+    short-id: 457fab2ac885dbe0
+  client-fingerprint: ios
+  network: grpc
+  grpc-opts:
+    grpc-service-name: GunService
+- name: 🇺🇸 [354.0ms +/-830ms] shadowsocks-1853341729
+  server: 216.9.225.189
+  port: 443
+  type: ss
+  cipher: 2022-blake3-aes-256-gcm
+  password: Q2YsIzc5YkchSFjsqUZWrQAFtsSpqf7XxYxkG4+Jbsk=:zT1SecPttPY/XPW6NwjK5Wql+/6zbcGSDJK21Jk8uLo=
+  udp: true
+- name: 🇮🇹 [636.2ms +/-1030ms] vless-1930538329
+  server: 147.45.51.171
+  port: 8443
+  type: vless
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  servername: viper-21.moriarty-web.com
+  servername: twitch.tv
   skip-cert-verify: true
-- name: '[803.4ms +/-1436ms] 🇩🇪DE_7|1.7MB/s'
-  server: 213.177.229.161
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇳🇱 [937.8ms +/-2136ms] @confiig_hub
-  server: 130.49.161.70
-  port: 443
-  type: hysteria2
-  password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
-  sni: hy2.aspidnet.xyz
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
-- name: '[1022.8ms +/-1578ms] 🇦🇱AL_3|2.5MB/s'
-  server: 87.120.103.242
+  reality-opts:
+    public-key: dPa581kev2x9-st7VQ-DTh3NjXlHJ2830YDySuI8n2U
+    short-id: e723d26df67888b9
+  client-fingerprint: firefox
+- name: '[420.1ms +/-1016ms] http-38.247.141.135'
+  server: 38.247.141.135
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: '[718.2ms +/-1221ms] FR_speednode_0010'
-  server: 51.159.225.196
-  port: 23856
+- name: 🇺🇸 [496.3ms +/-838ms] shadowsocks-1827146718
+  server: 15.204.246.132
+  port: 7307
+  type: ss
+  cipher: aes-256-gcm
+  password: FoOiGlkAA9yPEGP
+  udp: true
+- name: '[362.0ms +/-603ms] http-44.248.167.117'
+  server: 44.248.167.117
+  port: 8443
   type: http
-  username: 'null'
-  password: 'null'
   tls: true
   skip-cert-verify: true
-- name: '[841.7ms +/-1381ms] 🇭🇺HU_1|1.9MB/s'
-  server: 146.70.203.18
-  port: 443
-  type: http
+- name: 🇸🇬 [727.4ms +/-565ms] vless-1843512947
+  server: 139.162.27.96
+  port: 2096
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  udp: true
   tls: true
+  servername: free-server.techsonic.dev
   skip-cert-verify: true
-- name: 🇸🇪 [737.5ms +/-1188ms] vless-1927184320
+  network: ws
+  ws-opts:
+    path: /free-server.techsonic.dev
+    headers:
+      Host: free-server.techsonic.dev
+- name: 🇳🇱 [615.0ms +/-987ms] vless-1935750593
+  server: 185.14.30.98
+  port: 8443
+  type: vless
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: twitch.tv
+  skip-cert-verify: true
+  reality-opts:
+    public-key: Q0dPyF2hFWgxL7hxntJWJammcb6zcRCyA-NOiOFrsAo
+    short-id: 1433a38abea1191c
+  client-fingerprint: safari
+- name: 🇸🇪 [741.3ms +/-1184ms] vless-1927184320
   server: 191.44.114.154
   port: 8443
   type: vless
@@ -633,113 +239,67 @@ proxies:
     public-key: ndQzAcG4g-2OhvFb8EjFnZyxJ2lhawiulTLJOZrK8lY
     short-id: c4359f3827231250
   client-fingerprint: firefox
-- name: '[879.6ms +/-1119ms] 🇮🇹IT_2|3.3MB/s'
-  server: 185.183.105.130
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[655.0ms +/-860ms] Channel'
-  server: 156.252.229.11
-  port: 8443
-  type: vless
-  uuid: 3e21e3d3-6d26-4155-b851-764dd8e8c6b5
-  udp: true
-  tls: true
-  servername: play.googleapis.com
-  skip-cert-verify: true
-  reality-opts:
-    public-key: 7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A
-    short-id: 974f7f8f
-  client-fingerprint: chrome
-- name: '[680.0ms +/-820ms] @DeltaKroneckerGithub'
-  server: 50.7.36.29
+- name: 🇳🇱 [671.3ms +/-1078ms] vless-1879632165
+  server: 130.12.242.106
   port: 443
   type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: bc058e69-0444-4c7b-98da-bd67f0b143da
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  servername: ekb.eg
-  skip-cert-verify: true
-- name: '[835.3ms +/-1124ms] FR_speednode_0009'
-  server: 83.206.1.225
-  port: 8090
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[624.3ms +/-1024ms] @ConfigV2RayNG'
-  server: 66.154.101.36
-  port: 443
-  type: vless
-  uuid: c166ca49-4af0-416d-8411-2100f7bde9fe
-  udp: true
-  tls: true
-  servername: www.tesla.com
+  servername: deepl.com
   skip-cert-verify: true
   reality-opts:
-    public-key: t_aj99mkcVXDY_7xI9RhWyEY3khupiGiDsGKEJ7EajM
-    short-id: 5590a9bae52e0586
-  client-fingerprint: chrome
-- name: '[1066.8ms +/-2187ms] 🇩🇪DE_5|3.4MB/s'
-  server: 193.233.75.115
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[1057.2ms +/-2030ms] 🇳🇴NO_1|1.8MB/s'
-  server: 146.70.170.210
-  port: 9443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇫🇮 [769.2ms +/-1036ms] vless-1927184299
-  server: 77.42.12.225
+    public-key: vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8
+    short-id: 15affa0af66dfc79
+  client-fingerprint: random
+- name: 🇺🇦 [579.6ms +/-847ms] vless-1937255478
+  server: 92.113.107.120
   port: 443
   type: vless
-  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
+  uuid: dbda40e2-25b5-416c-8d35-56d07e8dcdbc
   udp: true
   tls: true
-  servername: 8fc752g.fi3.h1clayd.click
-  skip-cert-verify: true
-  reality-opts:
-    public-key: GJzag9Wrvz_bO9AQaA-Oq0P1kV9btmxxAdzPV-uQB18
-    short-id: 09d0a94a1c6fc9d5
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-service-name: f345a414c040
-- name: '[791.2ms +/-1330ms] @DeltaKroneckerGithub'
-  server: 50.7.226.172
-  port: 443
-  type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: viper-21.moriarty-web.com
-  skip-cert-verify: true
-- name: '[975.7ms +/-1393ms] 🇵🇹PT_1|1.1MB/s'
-  server: 149.22.86.1
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: '[648.8ms +/-1526ms] Channel'
-  server: 167.82.64.64
-  port: 443
-  type: vless
-  uuid: 46cb8a26-0712-4e85-89bf-2538a2788652
-  udp: true
-  tls: true
-  servername: cdn.akamai.steamstatic.com
+  servername: indigostar.click
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /
-    headers:
-      Host: copy_az_channel_NUFiLTER_7i.global.ssl.fastly.net.
-- name: 🇱🇻 [723.5ms +/-1159ms] @VPsave
+    path: /ws
+    headers: {}
+- name: 🇨🇦 [1358.1ms +/-1896ms] vless-1827162767
+  server: 66.70.179.198
+  port: 2053
+  type: vless
+  uuid: dc620cd6-a9d8-4a0f-8f18-006b895db77e
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU
+    short-id: 83f8317a948bb769
+  client-fingerprint: firefox
+- name: '[642.9ms +/-1081ms] 4Mohsen-eb8d2e996c'
+  server: 217.60.72.225
+  port: 443
+  type: hysteria2
+  password: 329e13e4-ee7c-4802-ac72-5fcab79c2402
+  sni: forshynewh.duckdns.org
+  skip-cert-verify: true
+- name: 🇮🇳 [797.2ms +/-791ms] vless-1928317282
+  server: 178.212.35.198
+  port: 443
+  type: vless
+  uuid: 6bdc8320-7eae-46fc-be08-f5f54e65dfc8
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: 3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q
+    short-id: 6bdc8320
+  client-fingerprint: chrome
+- name: 🇱🇻 [719.0ms +/-1091ms] vless-1937002879
   server: 45.43.79.92
   port: 443
   type: vless
@@ -753,359 +313,654 @@ proxies:
     public-key: M4Y9h339sntl5wEpiCa7f4IKhJ_8JLzPnAz2IzKlngM
     short-id: af4ca5d16438c938
   client-fingerprint: chrome
-- name: '[1018.1ms +/-1309ms] 🇲🇾MY_1|2.6MB/s'
-  server: 152.233.3.14
+- name: '[377.6ms +/-868ms] shadowsocks-1938409000'
+  server: losangeles03.npvnot.com
+  port: 995
+  type: ss
+  cipher: aes-256-gcm
+  password: NjI4NzJhZjZkMDlkZTg4ODNkOWJkYWI5ZWUwMWFi
+  udp: true
+- name: '[375.4ms +/-693ms] 🇺🇸US-🚀@VPNine1'
+  server: 151.101.36.120
+  port: 443
+  type: trojan
+  password: MiTiVPN
+  sni: firefox.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/NLSus---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1
+    headers:
+      Host: mitivpn--mitivpn.ac.ir
+- name: 🇨🇭 [944.9ms +/-1892ms] vless-1875103853
+  server: 208.69.78.217
+  port: 2053
+  type: vless
+  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+  udp: true
+  tls: true
+  servername: www.apple.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
+    short-id: ad86e2d52ff40ebd
+  client-fingerprint: firefox
+- name: '[374.0ms +/-719ms] 🇺🇸US-🚀@VPNine1'
+  server: 167.82.64.120
+  port: 443
+  type: trojan
+  password: MiTiVPN
+  sni: firefox.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/NLSus---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1
+    headers:
+      Host: mitivpn--mitivpn.ac.ir
+- name: '[381.3ms +/-638ms] 🇺🇸US-🚀@VPNine1'
+  server: 146.75.57.120
+  port: 443
+  type: trojan
+  password: MiTiVPN
+  sni: firefox.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/NLSus---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1
+    headers:
+      Host: mitivpn--mitivpn.ac.ir
+- name: 🇸🇨 [664.2ms +/-1068ms] 4FreeIran-04dce10a72
+  server: 45.130.125.69
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[629.9ms +/-1048ms] http-84.17.50.214'
+  server: 84.17.50.214
   port: 9443
   type: http
   tls: true
   skip-cert-verify: true
-- name: '[1058.4ms +/-1405ms] 🇮🇱IL_1|3.2MB/s|K001-260618'
-  server: 169.150.248.17
+- name: '[665.9ms +/-1049ms] http-82.65.162.76'
+  server: 82.65.162.76
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: '[747.3ms +/-1146ms] @DeltaKroneckerGithub'
-  server: 31.76.5.42
+- name: 🇺🇸 [684.7ms +/-1070ms] @prrofile_purple
+  server: 141.193.213.172
   port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇱🇺 [1185.1ms +/-2595ms] vless-1927379067
+  server: 107.189.7.176
+  port: 32752
   type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  uuid: 4970c1cd-13e1-498a-920a-61d07be2fa65
+  udp: true
+  tls: true
+  servername: www.apple.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: pfFcQxKv4EPhCDUoZMCmTjj4FK7HHQg_me-In3bOejA
+    short-id: d758a643034ad90e
+  client-fingerprint: chrome
+- name: '[693.7ms +/-1083ms] http-149.36.50.1'
+  server: 149.36.50.1
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[659.2ms +/-1003ms] http-149.36.50.129'
+  server: 149.36.50.129
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[552.7ms +/-658ms] 🇺🇸US-🚀@VPNine1'
+  server: 199.232.78.120
+  port: 443
+  type: trojan
+  password: MiTiVPN
+  sni: firefox.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/NLSus---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1
+    headers:
+      Host: mitivpn--mitivpn.ac.ir
+- name: '[711.2ms +/-922ms] http-34.249.214.108'
+  server: 34.249.214.108
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[704.0ms +/-1179ms] http-51.159.225.197'
+  server: 51.159.225.197
+  port: 19362
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[759.4ms +/-1346ms] http-103.97.88.154'
+  server: 103.97.88.154
+  port: 443
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: '[839.3ms +/-1414ms] @DeltaKroneckerGithub'
+  server: 125.227.86.45
+  port: 443
+  type: trojan
+  password: 0a9f1f5a397bd427
+  sni: TG.freecodes
+  skip-cert-verify: true
+  udp: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: db
+- name: '[678.4ms +/-1030ms] http-213.109.163.119'
+  server: 213.109.163.119
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[756.9ms +/-1074ms] Channel'
+  server: 104.21.103.254
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[764.4ms +/-1158ms] http-158.173.154.5'
+  server: 158.173.154.5
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[775.5ms +/-1172ms] http-95.153.31.66'
+  server: 95.153.31.66
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[791.5ms +/-1413ms] http-84.17.47.125'
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[804.8ms +/-1463ms] http-84.17.47.149'
+  server: 84.17.47.149
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[811.5ms +/-1450ms] http-84.17.47.124'
+  server: 84.17.47.124
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[830.6ms +/-994ms] Channel'
+  server: 104.18.37.127
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.trusteeforward.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.trusteeforward.com
+- name: '[816.0ms +/-1484ms] http-84.17.47.123'
+  server: 84.17.47.123
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[827.1ms +/-1302ms] http-158.173.154.1'
+  server: 158.173.154.1
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸 [781.3ms +/-1222ms] Channel
+  server: 8.6.112.206
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.trusteeforward.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.trusteeforward.com
+- name: 🇸🇪 [745.8ms +/-1036ms] vless-1853498483
+  server: 193.188.21.253
+  port: 14430
+  type: vless
+  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  udp: true
+  network: ws
+  ws-opts:
+    path: /vless
+    headers: {}
+- name: '[874.7ms +/-1684ms] http-84.17.47.148'
+  server: 84.17.47.148
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[752.6ms +/-1292ms] http-51.159.225.196'
+  server: 51.159.225.196
+  port: 23856
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇿🇦 [1057.1ms +/-1584ms] shadowsocks-1827146396
+  server: 102.133.165.160
+  port: 16233
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  udp: true
+- name: '[893.4ms +/-1436ms] http-154.47.29.161'
+  server: 154.47.29.161
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[652.6ms +/-1297ms] shadowsocks-1938409002'
+  server: london02.npvnot.com
+  port: 995
+  type: ss
+  cipher: aes-256-gcm
+  password: OGEyYWJkY2Y4OTFjYTQ1MTFmZmE0OWI2MTA5ZDgz
+  udp: true
+- name: '[668.7ms +/-1102ms] shadowsocks-1938409003'
+  server: helsinki03.npvnot.com
+  port: 995
+  type: ss
+  cipher: aes-256-gcm
+  password: MjNhN2QwNmFlYTRlZGMxNWVlOTI0MGI0MTU4MDY1
+  udp: true
+- name: '[927.0ms +/-797ms] 4Jadi-c2e6ff7722'
+  server: 104.18.37.228
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[1082.0ms +/-2130ms] http-37.120.156.18'
+  server: 37.120.156.18
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇧🇷 [1123.4ms +/-1765ms] 4FreeIran-0713704ea7
+  server: 177.7.51.29
+  port: 8443
+  type: vless
+  uuid: c6b1b2d0-ed5e-48ce-99e6-112ff330030d
   udp: true
   flow: xtls-rprx-vision
   tls: true
-  servername: norw-2.failspace.top
-  skip-cert-verify: true
-- name: '[792.7ms +/-1114ms] @DeltaKroneckerGithub'
-  server: 78.17.53.142
-  port: 8443
-  type: vless
-  uuid: 6b566898-8416-4ac3-8b8f-66db059c462b
-  udp: true
-  tls: true
-  servername: www.ru.nl
+  servername: www.apple.com
   skip-cert-verify: true
   reality-opts:
-    public-key: drwJd-KiNSQHhp1yHQBknycbzWEzR2K9_R9ZdfPra3U
-    short-id: ''
-  client-fingerprint: chrome
-- name: '[1098.3ms +/-1981ms] 🇪🇨EC_1|2.6MB/s'
-  server: 38.165.231.71
-  port: 9443
+    public-key: laG5BxoSbdRozpauATNFBPPTwhuDuu0JFl_SCP2ZQlU
+    short-id: 14fbf992
+  client-fingerprint: firefox
+- name: '[2186.5ms +/-3543ms] 4Mohsen-0359eb4116'
+  server: 141.101.115.104
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[1173.0ms +/-1465ms] http-83.206.1.225'
+  server: 83.206.1.225
+  port: 8090
   type: http
   tls: true
   skip-cert-verify: true
+- name: '[961.4ms +/-1233ms] shadowsocks-1938408994'
+  server: frankfurt111.npvnot.com
+  port: 995
+  type: ss
+  cipher: aes-256-gcm
+  password: YmMyMGYzZGRjNThkNmE2MTcxMmU2ZWVkMWRiZjNj
+  udp: true
+- name: '[1381.0ms +/-1283ms] 4Jadi-34eab92735'
+  server: 79.182.39.37
+  port: 27591
+  type: vless
+  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
+  udp: true
+  tls: true
+  servername: www.samsung.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: LY0H47MWx87_L_JBzxFAuTzKZB53U7MrZQK8-dNnMxM
+    short-id: 6c5c7900406a1ae7
+  client-fingerprint: firefox
+- name: '[981.1ms +/-1317ms] shadowsocks-1938408996'
+  server: amsterdam108.npvnot.com
+  port: 995
+  type: ss
+  cipher: aes-256-gcm
+  password: NWE0Y2I5ZjZlYzdlNjgyMzk4ZGZiNTQ1NzcyMTFi
+  udp: true
+- name: '[1233.2ms +/-1580ms] 4FreeIran-2e7ccf649d'
+  server: 94.156.79.93
+  port: 443
+  type: vless
+  uuid: 1a5e7720-abf3-4b9b-bc9b-9a900a04b434
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.microsoft.com
+  skip-cert-verify: true
+  reality-opts:
+    public-key: _0fpFqEEuCso3B8K7AAcMjctwG_xfCxO2PdKzGd_-hg
+    short-id: f129dcdbf64f
+  client-fingerprint: firefox
+- name: '[1688.1ms +/-2792ms] 4Mohsen-b13483d71a'
+  server: 139.84.132.62
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: in.tronsg.com
+  skip-cert-verify: true
+  udp: true
 proxy-groups:
 - name: 🚀 Proxy
   type: select
   proxies:
   - ♻️ Auto
   - 其他
+  - 🇯🇵 日本
+  - 🇳🇱 荷兰
+  - 🇸🇪 其他
   - 🇺🇸 美国
-  - 🇺🇸 [263.9ms +/-588ms] trojan-1930077596
-  - 🇺🇸 [264.6ms +/-601ms] trojan-1929965362
-  - 🇺🇸 [268.6ms +/-605ms] trojan-1932448326
-  - 🇺🇸 [265.2ms +/-603ms] trojan-1929965354
-  - '[247.9ms +/-554ms] 🇺🇸US_10|1.6MB/s'
-  - '[448.8ms +/-1161ms] 🇺🇸US_8|3.0MB/s'
-  - 🇺🇸 [308.4ms +/-601ms] trojan-1935007697
-  - 🇺🇸 [305.6ms +/-601ms] trojan-1929965329
-  - 🇺🇸 [303.1ms +/-602ms] trojan-1929965344
-  - 🇺🇸 [323.0ms +/-626ms] vless-1880433481
-  - 🇺🇸 [418.9ms +/-693ms] trojan-1929965338
-  - '[348.8ms +/-718ms] 🇺🇸US_12|1.6MB/s'
-  - '[394.0ms +/-252ms] @DeltaKroneckerGithub'
-  - '[583.2ms +/-1478ms] 🇺🇸US_13|2.9MB/s'
-  - 🇺🇸 [369.6ms +/-742ms] Channel
-  - '[416.2ms +/-773ms] US_speednode_0039'
-  - '[412.6ms +/-953ms] 🇺🇸US_7|2.6MB/s'
-  - 🇺🇸 [353.0ms +/-753ms] vless-1828372448
-  - '[587.0ms +/-1446ms] 🇺🇸US_9|3.1MB/s'
-  - 🇺🇸 [259.5ms +/-570ms] trojan-1930077602
-  - '[414.2ms +/-832ms] 🇺🇸US_6|3.1MB/s'
-  - '[577.0ms +/-864ms] 🇬🇧GB_5|2.7MB/s'
-  - '[343.3ms +/-685ms] @DeltaKroneckerGithub'
-  - 🇺🇸 [298.1ms +/-653ms] trojan-1936051367
-  - '[623.6ms +/-1010ms] 🇬🇧GB_6|3.1MB/s'
-  - 🇺🇸 [363.2ms +/-813ms] shadowsocks-1875129452
-  - '[616.8ms +/-873ms] 🇩🇪DE_3|2.4MB/s'
-  - '[549.6ms +/-836ms] IE_speednode_0013'
-  - '[633.5ms +/-1048ms] 🇬🇧GB_4|4.0MB/s'
-  - 🇺🇸 [402.6ms +/-816ms] vless-1853340968
-  - '[624.2ms +/-914ms] 🇳🇱NL_5|1.8MB/s'
-  - 🇺🇸 [378.7ms +/-621ms] vless-1853340740
-  - '[620.8ms +/-995ms] 🇬🇧GB_3|3.3MB/s'
-  - '[616.4ms +/-879ms] 🇩🇪DE_2|2.6MB/s'
-  - 🇺🇸 [323.3ms +/-736ms] @DeltaKroneckerGithub
-  - '[637.6ms +/-1101ms] 🇮🇪IE_3|2.2MB/s'
-  - '[337.3ms +/-684ms] @DeltaKroneckerGithub'
-  - '[399.6ms +/-801ms] @DeltaKroneckerGithub'
-  - '[704.6ms +/-1097ms] 🇩🇪DE_9|3.7MB/s'
-  - '[731.9ms +/-1219ms] 🇫🇷FR_5|2.2MB/s'
-  - '[701.9ms +/-1117ms] 🇧🇪BE_1|3.0MB/s'
-  - '[740.9ms +/-1132ms] 🇨🇿CZ_1|3.0MB/s'
-  - '[727.9ms +/-1153ms] 🇨🇭CH_1|1.1MB/s'
-  - '[727.2ms +/-1012ms] 🇪🇪EE_1|3.3MB/s'
-  - '[758.4ms +/-1359ms] 🇬🇧GB_2|3.1MB/s|R002-260618'
-  - 🇩🇰 [560.9ms +/-968ms] vless-1883443396
-  - 🇧🇷 [787.5ms +/-1348ms] trojan-1930538342
-  - '[781.3ms +/-1233ms] 🇵🇱PL_2|2.4MB/s'
-  - 🇺🇸 [654.5ms +/-1724ms] vless-1860511077
-  - '[753.7ms +/-1285ms] 🇮🇪IE_4|1.2MB/s'
-  - '[697.7ms +/-1133ms] FR_speednode_0012'
-  - '[813.2ms +/-1300ms] 🇵🇱PL_1|4.0MB/s'
-  - '[811.8ms +/-1480ms] 🇬🇧GB_9|2.2MB/s'
-  - '[726.7ms +/-1232ms] NL_speednode_0023'
-  - '[638.4ms +/-891ms] 🇩🇪DE_4|2.3MB/s'
-  - '[735.2ms +/-1283ms] FR_speednode_0008'
-  - '[704.3ms +/-1042ms] Channel'
-  - '[844.1ms +/-1005ms] 🇷🇺RU_1|2.4MB/s'
-  - '[682.7ms +/-1071ms] 🇩🇪DE_8|2.3MB/s'
-  - '[696.5ms +/-1100ms] 🇫🇷FR_4|1.7MB/s'
-  - '[782.6ms +/-1309ms] NL_speednode_0024'
-  - '[788.8ms +/-1385ms] NL_speednode_0027'
-  - '[700.5ms +/-1118ms] 🇩🇪DE_6|2.9MB/s'
-  - '[902.9ms +/-1419ms] 🇷🇴RO_1|2.2MB/s'
-  - '[790.5ms +/-1271ms] 🇮🇹IT_3|2.3MB/s'
-  - 🇩🇪 [702.6ms +/-1203ms] vless-1854330919
-  - '[806.4ms +/-1330ms] DK_speednode_0006'
-  - '[713.1ms +/-1146ms] DE_speednode_0004'
-  - '[739.5ms +/-1268ms] 🇩🇪DE_1|1.3MB/s'
-  - '[740.5ms +/-1132ms] 🇸🇪SE_3|1.6MB/s'
-  - '[725.9ms +/-1110ms] 🇳🇱NL_4|2.3MB/s'
-  - 🇮🇹 [521.8ms +/-733ms] shadowsocks-1827147481
-  - '[832.4ms +/-880ms] 🇸🇬SG_2|1.6MB/s'
-  - '[723.1ms +/-934ms] 🇷🇴RO_2|2.5MB/s'
-  - '[772.6ms +/-1364ms] 🇮🇪IE_2|2.6MB/s'
-  - '[786.3ms +/-1275ms] 🇸🇪SE_1|2.6MB/s'
-  - '[609.8ms +/-961ms] @DeltaKroneckerGithub'
-  - '[803.4ms +/-1436ms] 🇩🇪DE_7|1.7MB/s'
-  - 🇳🇱 [937.8ms +/-2136ms] @confiig_hub
-  - '[1022.8ms +/-1578ms] 🇦🇱AL_3|2.5MB/s'
-  - '[718.2ms +/-1221ms] FR_speednode_0010'
-  - '[841.7ms +/-1381ms] 🇭🇺HU_1|1.9MB/s'
-  - 🇸🇪 [737.5ms +/-1188ms] vless-1927184320
-  - '[879.6ms +/-1119ms] 🇮🇹IT_2|3.3MB/s'
-  - '[655.0ms +/-860ms] Channel'
-  - '[680.0ms +/-820ms] @DeltaKroneckerGithub'
-  - '[835.3ms +/-1124ms] FR_speednode_0009'
-  - '[624.3ms +/-1024ms] @ConfigV2RayNG'
-  - '[1066.8ms +/-2187ms] 🇩🇪DE_5|3.4MB/s'
-  - '[1057.2ms +/-2030ms] 🇳🇴NO_1|1.8MB/s'
-  - 🇫🇮 [769.2ms +/-1036ms] vless-1927184299
-  - '[791.2ms +/-1330ms] @DeltaKroneckerGithub'
-  - '[975.7ms +/-1393ms] 🇵🇹PT_1|1.1MB/s'
-  - '[648.8ms +/-1526ms] Channel'
-  - 🇱🇻 [723.5ms +/-1159ms] @VPsave
-  - '[1018.1ms +/-1309ms] 🇲🇾MY_1|2.6MB/s'
-  - '[1058.4ms +/-1405ms] 🇮🇱IL_1|3.2MB/s|K001-260618'
-  - '[747.3ms +/-1146ms] @DeltaKroneckerGithub'
-  - '[792.7ms +/-1114ms] @DeltaKroneckerGithub'
-  - '[1098.3ms +/-1981ms] 🇪🇨EC_1|2.6MB/s'
+  - 🇺🇸 [346.7ms +/-761ms] vless-1877172710
+  - 🇺🇸 [578.2ms +/-1530ms] trojan-1929965351
+  - 🇺🇸 [455.2ms +/-1111ms] trojan-1827613948
+  - 🇺🇸 [444.8ms +/-989ms] vless-1835128666
+  - 🇺🇸 [409.5ms +/-1078ms] hysteria2-1830343753
+  - 🇺🇸 [439.3ms +/-970ms] vless-1828293927
+  - 🇺🇸 [290.8ms +/-585ms] shadowsocks-1827146667
+  - 🇯🇵 [376.4ms +/-297ms] shadowsocks-1827146287
+  - 🇯🇵 [375.7ms +/-296ms] shadowsocks-1827146197
+  - 🇺🇸 [424.1ms +/-890ms] vless-1937733881
+  - 🇩🇰 [546.1ms +/-917ms] vless-1883443396
+  - '[351.3ms +/-861ms] http-121.127.34.82'
+  - 🇬🇧 [582.5ms +/-970ms] vless-1828531878
+  - 🇹🇷 [626.9ms +/-994ms] vless-1876710446
+  - 🇺🇸 [354.0ms +/-830ms] shadowsocks-1853341729
+  - 🇮🇹 [636.2ms +/-1030ms] vless-1930538329
+  - '[420.1ms +/-1016ms] http-38.247.141.135'
+  - 🇺🇸 [496.3ms +/-838ms] shadowsocks-1827146718
+  - '[362.0ms +/-603ms] http-44.248.167.117'
+  - 🇸🇬 [727.4ms +/-565ms] vless-1843512947
+  - 🇳🇱 [615.0ms +/-987ms] vless-1935750593
+  - 🇸🇪 [741.3ms +/-1184ms] vless-1927184320
+  - 🇳🇱 [671.3ms +/-1078ms] vless-1879632165
+  - 🇺🇦 [579.6ms +/-847ms] vless-1937255478
+  - 🇨🇦 [1358.1ms +/-1896ms] vless-1827162767
+  - '[642.9ms +/-1081ms] 4Mohsen-eb8d2e996c'
+  - 🇮🇳 [797.2ms +/-791ms] vless-1928317282
+  - 🇱🇻 [719.0ms +/-1091ms] vless-1937002879
+  - '[377.6ms +/-868ms] shadowsocks-1938409000'
+  - '[375.4ms +/-693ms] 🇺🇸US-🚀@VPNine1'
+  - 🇨🇭 [944.9ms +/-1892ms] vless-1875103853
+  - '[374.0ms +/-719ms] 🇺🇸US-🚀@VPNine1'
+  - '[381.3ms +/-638ms] 🇺🇸US-🚀@VPNine1'
+  - 🇸🇨 [664.2ms +/-1068ms] 4FreeIran-04dce10a72
+  - '[629.9ms +/-1048ms] http-84.17.50.214'
+  - '[665.9ms +/-1049ms] http-82.65.162.76'
+  - 🇺🇸 [684.7ms +/-1070ms] @prrofile_purple
+  - 🇱🇺 [1185.1ms +/-2595ms] vless-1927379067
+  - '[693.7ms +/-1083ms] http-149.36.50.1'
+  - '[659.2ms +/-1003ms] http-149.36.50.129'
+  - '[552.7ms +/-658ms] 🇺🇸US-🚀@VPNine1'
+  - '[711.2ms +/-922ms] http-34.249.214.108'
+  - '[704.0ms +/-1179ms] http-51.159.225.197'
+  - '[759.4ms +/-1346ms] http-103.97.88.154'
+  - '[839.3ms +/-1414ms] @DeltaKroneckerGithub'
+  - '[678.4ms +/-1030ms] http-213.109.163.119'
+  - '[756.9ms +/-1074ms] Channel'
+  - '[764.4ms +/-1158ms] http-158.173.154.5'
+  - '[775.5ms +/-1172ms] http-95.153.31.66'
+  - '[791.5ms +/-1413ms] http-84.17.47.125'
+  - '[804.8ms +/-1463ms] http-84.17.47.149'
+  - '[811.5ms +/-1450ms] http-84.17.47.124'
+  - '[830.6ms +/-994ms] Channel'
+  - '[816.0ms +/-1484ms] http-84.17.47.123'
+  - '[827.1ms +/-1302ms] http-158.173.154.1'
+  - 🇺🇸 [781.3ms +/-1222ms] Channel
+  - 🇸🇪 [745.8ms +/-1036ms] vless-1853498483
+  - '[874.7ms +/-1684ms] http-84.17.47.148'
+  - '[752.6ms +/-1292ms] http-51.159.225.196'
+  - 🇿🇦 [1057.1ms +/-1584ms] shadowsocks-1827146396
+  - '[893.4ms +/-1436ms] http-154.47.29.161'
+  - '[652.6ms +/-1297ms] shadowsocks-1938409002'
+  - '[668.7ms +/-1102ms] shadowsocks-1938409003'
+  - '[927.0ms +/-797ms] 4Jadi-c2e6ff7722'
+  - '[1082.0ms +/-2130ms] http-37.120.156.18'
+  - 🇧🇷 [1123.4ms +/-1765ms] 4FreeIran-0713704ea7
+  - '[2186.5ms +/-3543ms] 4Mohsen-0359eb4116'
+  - '[1173.0ms +/-1465ms] http-83.206.1.225'
+  - '[961.4ms +/-1233ms] shadowsocks-1938408994'
+  - '[1381.0ms +/-1283ms] 4Jadi-34eab92735'
+  - '[981.1ms +/-1317ms] shadowsocks-1938408996'
+  - '[1233.2ms +/-1580ms] 4FreeIran-2e7ccf649d'
+  - '[1688.1ms +/-2792ms] 4Mohsen-b13483d71a'
 - name: ♻️ Auto
   type: url-test
   proxies:
-  - 🇺🇸 [263.9ms +/-588ms] trojan-1930077596
-  - 🇺🇸 [264.6ms +/-601ms] trojan-1929965362
-  - 🇺🇸 [268.6ms +/-605ms] trojan-1932448326
-  - 🇺🇸 [265.2ms +/-603ms] trojan-1929965354
-  - '[247.9ms +/-554ms] 🇺🇸US_10|1.6MB/s'
-  - '[448.8ms +/-1161ms] 🇺🇸US_8|3.0MB/s'
-  - 🇺🇸 [308.4ms +/-601ms] trojan-1935007697
-  - 🇺🇸 [305.6ms +/-601ms] trojan-1929965329
-  - 🇺🇸 [303.1ms +/-602ms] trojan-1929965344
-  - 🇺🇸 [323.0ms +/-626ms] vless-1880433481
-  - 🇺🇸 [418.9ms +/-693ms] trojan-1929965338
-  - '[348.8ms +/-718ms] 🇺🇸US_12|1.6MB/s'
-  - '[394.0ms +/-252ms] @DeltaKroneckerGithub'
-  - '[583.2ms +/-1478ms] 🇺🇸US_13|2.9MB/s'
-  - 🇺🇸 [369.6ms +/-742ms] Channel
-  - '[416.2ms +/-773ms] US_speednode_0039'
-  - '[412.6ms +/-953ms] 🇺🇸US_7|2.6MB/s'
-  - 🇺🇸 [353.0ms +/-753ms] vless-1828372448
-  - '[587.0ms +/-1446ms] 🇺🇸US_9|3.1MB/s'
-  - 🇺🇸 [259.5ms +/-570ms] trojan-1930077602
-  - '[414.2ms +/-832ms] 🇺🇸US_6|3.1MB/s'
-  - '[577.0ms +/-864ms] 🇬🇧GB_5|2.7MB/s'
-  - '[343.3ms +/-685ms] @DeltaKroneckerGithub'
-  - 🇺🇸 [298.1ms +/-653ms] trojan-1936051367
-  - '[623.6ms +/-1010ms] 🇬🇧GB_6|3.1MB/s'
-  - 🇺🇸 [363.2ms +/-813ms] shadowsocks-1875129452
-  - '[616.8ms +/-873ms] 🇩🇪DE_3|2.4MB/s'
-  - '[549.6ms +/-836ms] IE_speednode_0013'
-  - '[633.5ms +/-1048ms] 🇬🇧GB_4|4.0MB/s'
-  - 🇺🇸 [402.6ms +/-816ms] vless-1853340968
-  - '[624.2ms +/-914ms] 🇳🇱NL_5|1.8MB/s'
-  - 🇺🇸 [378.7ms +/-621ms] vless-1853340740
-  - '[620.8ms +/-995ms] 🇬🇧GB_3|3.3MB/s'
-  - '[616.4ms +/-879ms] 🇩🇪DE_2|2.6MB/s'
-  - 🇺🇸 [323.3ms +/-736ms] @DeltaKroneckerGithub
-  - '[637.6ms +/-1101ms] 🇮🇪IE_3|2.2MB/s'
-  - '[337.3ms +/-684ms] @DeltaKroneckerGithub'
-  - '[399.6ms +/-801ms] @DeltaKroneckerGithub'
-  - '[704.6ms +/-1097ms] 🇩🇪DE_9|3.7MB/s'
-  - '[731.9ms +/-1219ms] 🇫🇷FR_5|2.2MB/s'
-  - '[701.9ms +/-1117ms] 🇧🇪BE_1|3.0MB/s'
-  - '[740.9ms +/-1132ms] 🇨🇿CZ_1|3.0MB/s'
-  - '[727.9ms +/-1153ms] 🇨🇭CH_1|1.1MB/s'
-  - '[727.2ms +/-1012ms] 🇪🇪EE_1|3.3MB/s'
-  - '[758.4ms +/-1359ms] 🇬🇧GB_2|3.1MB/s|R002-260618'
-  - 🇩🇰 [560.9ms +/-968ms] vless-1883443396
-  - 🇧🇷 [787.5ms +/-1348ms] trojan-1930538342
-  - '[781.3ms +/-1233ms] 🇵🇱PL_2|2.4MB/s'
-  - 🇺🇸 [654.5ms +/-1724ms] vless-1860511077
-  - '[753.7ms +/-1285ms] 🇮🇪IE_4|1.2MB/s'
-  - '[697.7ms +/-1133ms] FR_speednode_0012'
-  - '[813.2ms +/-1300ms] 🇵🇱PL_1|4.0MB/s'
-  - '[811.8ms +/-1480ms] 🇬🇧GB_9|2.2MB/s'
-  - '[726.7ms +/-1232ms] NL_speednode_0023'
-  - '[638.4ms +/-891ms] 🇩🇪DE_4|2.3MB/s'
-  - '[735.2ms +/-1283ms] FR_speednode_0008'
-  - '[704.3ms +/-1042ms] Channel'
-  - '[844.1ms +/-1005ms] 🇷🇺RU_1|2.4MB/s'
-  - '[682.7ms +/-1071ms] 🇩🇪DE_8|2.3MB/s'
-  - '[696.5ms +/-1100ms] 🇫🇷FR_4|1.7MB/s'
-  - '[782.6ms +/-1309ms] NL_speednode_0024'
-  - '[788.8ms +/-1385ms] NL_speednode_0027'
-  - '[700.5ms +/-1118ms] 🇩🇪DE_6|2.9MB/s'
-  - '[902.9ms +/-1419ms] 🇷🇴RO_1|2.2MB/s'
-  - '[790.5ms +/-1271ms] 🇮🇹IT_3|2.3MB/s'
-  - 🇩🇪 [702.6ms +/-1203ms] vless-1854330919
-  - '[806.4ms +/-1330ms] DK_speednode_0006'
-  - '[713.1ms +/-1146ms] DE_speednode_0004'
-  - '[739.5ms +/-1268ms] 🇩🇪DE_1|1.3MB/s'
-  - '[740.5ms +/-1132ms] 🇸🇪SE_3|1.6MB/s'
-  - '[725.9ms +/-1110ms] 🇳🇱NL_4|2.3MB/s'
-  - 🇮🇹 [521.8ms +/-733ms] shadowsocks-1827147481
-  - '[832.4ms +/-880ms] 🇸🇬SG_2|1.6MB/s'
-  - '[723.1ms +/-934ms] 🇷🇴RO_2|2.5MB/s'
-  - '[772.6ms +/-1364ms] 🇮🇪IE_2|2.6MB/s'
-  - '[786.3ms +/-1275ms] 🇸🇪SE_1|2.6MB/s'
-  - '[609.8ms +/-961ms] @DeltaKroneckerGithub'
-  - '[803.4ms +/-1436ms] 🇩🇪DE_7|1.7MB/s'
-  - 🇳🇱 [937.8ms +/-2136ms] @confiig_hub
-  - '[1022.8ms +/-1578ms] 🇦🇱AL_3|2.5MB/s'
-  - '[718.2ms +/-1221ms] FR_speednode_0010'
-  - '[841.7ms +/-1381ms] 🇭🇺HU_1|1.9MB/s'
-  - 🇸🇪 [737.5ms +/-1188ms] vless-1927184320
-  - '[879.6ms +/-1119ms] 🇮🇹IT_2|3.3MB/s'
-  - '[655.0ms +/-860ms] Channel'
-  - '[680.0ms +/-820ms] @DeltaKroneckerGithub'
-  - '[835.3ms +/-1124ms] FR_speednode_0009'
-  - '[624.3ms +/-1024ms] @ConfigV2RayNG'
-  - '[1066.8ms +/-2187ms] 🇩🇪DE_5|3.4MB/s'
-  - '[1057.2ms +/-2030ms] 🇳🇴NO_1|1.8MB/s'
-  - 🇫🇮 [769.2ms +/-1036ms] vless-1927184299
-  - '[791.2ms +/-1330ms] @DeltaKroneckerGithub'
-  - '[975.7ms +/-1393ms] 🇵🇹PT_1|1.1MB/s'
-  - '[648.8ms +/-1526ms] Channel'
-  - 🇱🇻 [723.5ms +/-1159ms] @VPsave
-  - '[1018.1ms +/-1309ms] 🇲🇾MY_1|2.6MB/s'
-  - '[1058.4ms +/-1405ms] 🇮🇱IL_1|3.2MB/s|K001-260618'
-  - '[747.3ms +/-1146ms] @DeltaKroneckerGithub'
-  - '[792.7ms +/-1114ms] @DeltaKroneckerGithub'
-  - '[1098.3ms +/-1981ms] 🇪🇨EC_1|2.6MB/s'
+  - 🇺🇸 [346.7ms +/-761ms] vless-1877172710
+  - 🇺🇸 [578.2ms +/-1530ms] trojan-1929965351
+  - 🇺🇸 [455.2ms +/-1111ms] trojan-1827613948
+  - 🇺🇸 [444.8ms +/-989ms] vless-1835128666
+  - 🇺🇸 [409.5ms +/-1078ms] hysteria2-1830343753
+  - 🇺🇸 [439.3ms +/-970ms] vless-1828293927
+  - 🇺🇸 [290.8ms +/-585ms] shadowsocks-1827146667
+  - 🇯🇵 [376.4ms +/-297ms] shadowsocks-1827146287
+  - 🇯🇵 [375.7ms +/-296ms] shadowsocks-1827146197
+  - 🇺🇸 [424.1ms +/-890ms] vless-1937733881
+  - 🇩🇰 [546.1ms +/-917ms] vless-1883443396
+  - '[351.3ms +/-861ms] http-121.127.34.82'
+  - 🇬🇧 [582.5ms +/-970ms] vless-1828531878
+  - 🇹🇷 [626.9ms +/-994ms] vless-1876710446
+  - 🇺🇸 [354.0ms +/-830ms] shadowsocks-1853341729
+  - 🇮🇹 [636.2ms +/-1030ms] vless-1930538329
+  - '[420.1ms +/-1016ms] http-38.247.141.135'
+  - 🇺🇸 [496.3ms +/-838ms] shadowsocks-1827146718
+  - '[362.0ms +/-603ms] http-44.248.167.117'
+  - 🇸🇬 [727.4ms +/-565ms] vless-1843512947
+  - 🇳🇱 [615.0ms +/-987ms] vless-1935750593
+  - 🇸🇪 [741.3ms +/-1184ms] vless-1927184320
+  - 🇳🇱 [671.3ms +/-1078ms] vless-1879632165
+  - 🇺🇦 [579.6ms +/-847ms] vless-1937255478
+  - 🇨🇦 [1358.1ms +/-1896ms] vless-1827162767
+  - '[642.9ms +/-1081ms] 4Mohsen-eb8d2e996c'
+  - 🇮🇳 [797.2ms +/-791ms] vless-1928317282
+  - 🇱🇻 [719.0ms +/-1091ms] vless-1937002879
+  - '[377.6ms +/-868ms] shadowsocks-1938409000'
+  - '[375.4ms +/-693ms] 🇺🇸US-🚀@VPNine1'
+  - 🇨🇭 [944.9ms +/-1892ms] vless-1875103853
+  - '[374.0ms +/-719ms] 🇺🇸US-🚀@VPNine1'
+  - '[381.3ms +/-638ms] 🇺🇸US-🚀@VPNine1'
+  - 🇸🇨 [664.2ms +/-1068ms] 4FreeIran-04dce10a72
+  - '[629.9ms +/-1048ms] http-84.17.50.214'
+  - '[665.9ms +/-1049ms] http-82.65.162.76'
+  - 🇺🇸 [684.7ms +/-1070ms] @prrofile_purple
+  - 🇱🇺 [1185.1ms +/-2595ms] vless-1927379067
+  - '[693.7ms +/-1083ms] http-149.36.50.1'
+  - '[659.2ms +/-1003ms] http-149.36.50.129'
+  - '[552.7ms +/-658ms] 🇺🇸US-🚀@VPNine1'
+  - '[711.2ms +/-922ms] http-34.249.214.108'
+  - '[704.0ms +/-1179ms] http-51.159.225.197'
+  - '[759.4ms +/-1346ms] http-103.97.88.154'
+  - '[839.3ms +/-1414ms] @DeltaKroneckerGithub'
+  - '[678.4ms +/-1030ms] http-213.109.163.119'
+  - '[756.9ms +/-1074ms] Channel'
+  - '[764.4ms +/-1158ms] http-158.173.154.5'
+  - '[775.5ms +/-1172ms] http-95.153.31.66'
+  - '[791.5ms +/-1413ms] http-84.17.47.125'
+  - '[804.8ms +/-1463ms] http-84.17.47.149'
+  - '[811.5ms +/-1450ms] http-84.17.47.124'
+  - '[830.6ms +/-994ms] Channel'
+  - '[816.0ms +/-1484ms] http-84.17.47.123'
+  - '[827.1ms +/-1302ms] http-158.173.154.1'
+  - 🇺🇸 [781.3ms +/-1222ms] Channel
+  - 🇸🇪 [745.8ms +/-1036ms] vless-1853498483
+  - '[874.7ms +/-1684ms] http-84.17.47.148'
+  - '[752.6ms +/-1292ms] http-51.159.225.196'
+  - 🇿🇦 [1057.1ms +/-1584ms] shadowsocks-1827146396
+  - '[893.4ms +/-1436ms] http-154.47.29.161'
+  - '[652.6ms +/-1297ms] shadowsocks-1938409002'
+  - '[668.7ms +/-1102ms] shadowsocks-1938409003'
+  - '[927.0ms +/-797ms] 4Jadi-c2e6ff7722'
+  - '[1082.0ms +/-2130ms] http-37.120.156.18'
+  - 🇧🇷 [1123.4ms +/-1765ms] 4FreeIran-0713704ea7
+  - '[2186.5ms +/-3543ms] 4Mohsen-0359eb4116'
+  - '[1173.0ms +/-1465ms] http-83.206.1.225'
+  - '[961.4ms +/-1233ms] shadowsocks-1938408994'
+  - '[1381.0ms +/-1283ms] 4Jadi-34eab92735'
+  - '[981.1ms +/-1317ms] shadowsocks-1938408996'
+  - '[1233.2ms +/-1580ms] 4FreeIran-2e7ccf649d'
+  - '[1688.1ms +/-2792ms] 4Mohsen-b13483d71a'
   url: https://www.gstatic.com/generate_204
   interval: 600
 - name: 其他
   type: url-test
   proxies:
-  - '[247.9ms +/-554ms] 🇺🇸US_10|1.6MB/s'
-  - '[448.8ms +/-1161ms] 🇺🇸US_8|3.0MB/s'
-  - '[348.8ms +/-718ms] 🇺🇸US_12|1.6MB/s'
-  - '[394.0ms +/-252ms] @DeltaKroneckerGithub'
-  - '[583.2ms +/-1478ms] 🇺🇸US_13|2.9MB/s'
-  - '[416.2ms +/-773ms] US_speednode_0039'
-  - '[412.6ms +/-953ms] 🇺🇸US_7|2.6MB/s'
-  - '[587.0ms +/-1446ms] 🇺🇸US_9|3.1MB/s'
-  - '[414.2ms +/-832ms] 🇺🇸US_6|3.1MB/s'
-  - '[577.0ms +/-864ms] 🇬🇧GB_5|2.7MB/s'
-  - '[343.3ms +/-685ms] @DeltaKroneckerGithub'
-  - '[623.6ms +/-1010ms] 🇬🇧GB_6|3.1MB/s'
-  - '[616.8ms +/-873ms] 🇩🇪DE_3|2.4MB/s'
-  - '[549.6ms +/-836ms] IE_speednode_0013'
-  - '[633.5ms +/-1048ms] 🇬🇧GB_4|4.0MB/s'
-  - '[624.2ms +/-914ms] 🇳🇱NL_5|1.8MB/s'
-  - '[620.8ms +/-995ms] 🇬🇧GB_3|3.3MB/s'
-  - '[616.4ms +/-879ms] 🇩🇪DE_2|2.6MB/s'
-  - '[637.6ms +/-1101ms] 🇮🇪IE_3|2.2MB/s'
-  - '[337.3ms +/-684ms] @DeltaKroneckerGithub'
-  - '[399.6ms +/-801ms] @DeltaKroneckerGithub'
-  - '[704.6ms +/-1097ms] 🇩🇪DE_9|3.7MB/s'
-  - '[731.9ms +/-1219ms] 🇫🇷FR_5|2.2MB/s'
-  - '[701.9ms +/-1117ms] 🇧🇪BE_1|3.0MB/s'
-  - '[740.9ms +/-1132ms] 🇨🇿CZ_1|3.0MB/s'
-  - '[727.9ms +/-1153ms] 🇨🇭CH_1|1.1MB/s'
-  - '[727.2ms +/-1012ms] 🇪🇪EE_1|3.3MB/s'
-  - '[758.4ms +/-1359ms] 🇬🇧GB_2|3.1MB/s|R002-260618'
-  - '[781.3ms +/-1233ms] 🇵🇱PL_2|2.4MB/s'
-  - '[753.7ms +/-1285ms] 🇮🇪IE_4|1.2MB/s'
-  - '[697.7ms +/-1133ms] FR_speednode_0012'
-  - '[813.2ms +/-1300ms] 🇵🇱PL_1|4.0MB/s'
-  - '[811.8ms +/-1480ms] 🇬🇧GB_9|2.2MB/s'
-  - '[726.7ms +/-1232ms] NL_speednode_0023'
-  - '[638.4ms +/-891ms] 🇩🇪DE_4|2.3MB/s'
-  - '[735.2ms +/-1283ms] FR_speednode_0008'
-  - '[704.3ms +/-1042ms] Channel'
-  - '[844.1ms +/-1005ms] 🇷🇺RU_1|2.4MB/s'
-  - '[682.7ms +/-1071ms] 🇩🇪DE_8|2.3MB/s'
-  - '[696.5ms +/-1100ms] 🇫🇷FR_4|1.7MB/s'
-  - '[782.6ms +/-1309ms] NL_speednode_0024'
-  - '[788.8ms +/-1385ms] NL_speednode_0027'
-  - '[700.5ms +/-1118ms] 🇩🇪DE_6|2.9MB/s'
-  - '[902.9ms +/-1419ms] 🇷🇴RO_1|2.2MB/s'
-  - '[790.5ms +/-1271ms] 🇮🇹IT_3|2.3MB/s'
-  - '[806.4ms +/-1330ms] DK_speednode_0006'
-  - '[713.1ms +/-1146ms] DE_speednode_0004'
-  - '[739.5ms +/-1268ms] 🇩🇪DE_1|1.3MB/s'
-  - '[740.5ms +/-1132ms] 🇸🇪SE_3|1.6MB/s'
-  - '[725.9ms +/-1110ms] 🇳🇱NL_4|2.3MB/s'
-  - '[832.4ms +/-880ms] 🇸🇬SG_2|1.6MB/s'
-  - '[723.1ms +/-934ms] 🇷🇴RO_2|2.5MB/s'
-  - '[772.6ms +/-1364ms] 🇮🇪IE_2|2.6MB/s'
-  - '[786.3ms +/-1275ms] 🇸🇪SE_1|2.6MB/s'
-  - '[609.8ms +/-961ms] @DeltaKroneckerGithub'
-  - '[803.4ms +/-1436ms] 🇩🇪DE_7|1.7MB/s'
-  - '[1022.8ms +/-1578ms] 🇦🇱AL_3|2.5MB/s'
-  - '[718.2ms +/-1221ms] FR_speednode_0010'
-  - '[841.7ms +/-1381ms] 🇭🇺HU_1|1.9MB/s'
-  - '[879.6ms +/-1119ms] 🇮🇹IT_2|3.3MB/s'
-  - '[655.0ms +/-860ms] Channel'
-  - '[680.0ms +/-820ms] @DeltaKroneckerGithub'
-  - '[835.3ms +/-1124ms] FR_speednode_0009'
-  - '[624.3ms +/-1024ms] @ConfigV2RayNG'
-  - '[1066.8ms +/-2187ms] 🇩🇪DE_5|3.4MB/s'
-  - '[1057.2ms +/-2030ms] 🇳🇴NO_1|1.8MB/s'
-  - '[791.2ms +/-1330ms] @DeltaKroneckerGithub'
-  - '[975.7ms +/-1393ms] 🇵🇹PT_1|1.1MB/s'
-  - '[648.8ms +/-1526ms] Channel'
-  - '[1018.1ms +/-1309ms] 🇲🇾MY_1|2.6MB/s'
-  - '[1058.4ms +/-1405ms] 🇮🇱IL_1|3.2MB/s|K001-260618'
-  - '[747.3ms +/-1146ms] @DeltaKroneckerGithub'
-  - '[792.7ms +/-1114ms] @DeltaKroneckerGithub'
-  - '[1098.3ms +/-1981ms] 🇪🇨EC_1|2.6MB/s'
+  - '[351.3ms +/-861ms] http-121.127.34.82'
+  - '[420.1ms +/-1016ms] http-38.247.141.135'
+  - '[362.0ms +/-603ms] http-44.248.167.117'
+  - '[642.9ms +/-1081ms] 4Mohsen-eb8d2e996c'
+  - '[377.6ms +/-868ms] shadowsocks-1938409000'
+  - '[375.4ms +/-693ms] 🇺🇸US-🚀@VPNine1'
+  - '[374.0ms +/-719ms] 🇺🇸US-🚀@VPNine1'
+  - '[381.3ms +/-638ms] 🇺🇸US-🚀@VPNine1'
+  - '[629.9ms +/-1048ms] http-84.17.50.214'
+  - '[665.9ms +/-1049ms] http-82.65.162.76'
+  - '[693.7ms +/-1083ms] http-149.36.50.1'
+  - '[659.2ms +/-1003ms] http-149.36.50.129'
+  - '[552.7ms +/-658ms] 🇺🇸US-🚀@VPNine1'
+  - '[711.2ms +/-922ms] http-34.249.214.108'
+  - '[704.0ms +/-1179ms] http-51.159.225.197'
+  - '[759.4ms +/-1346ms] http-103.97.88.154'
+  - '[839.3ms +/-1414ms] @DeltaKroneckerGithub'
+  - '[678.4ms +/-1030ms] http-213.109.163.119'
+  - '[756.9ms +/-1074ms] Channel'
+  - '[764.4ms +/-1158ms] http-158.173.154.5'
+  - '[775.5ms +/-1172ms] http-95.153.31.66'
+  - '[791.5ms +/-1413ms] http-84.17.47.125'
+  - '[804.8ms +/-1463ms] http-84.17.47.149'
+  - '[811.5ms +/-1450ms] http-84.17.47.124'
+  - '[830.6ms +/-994ms] Channel'
+  - '[816.0ms +/-1484ms] http-84.17.47.123'
+  - '[827.1ms +/-1302ms] http-158.173.154.1'
+  - '[874.7ms +/-1684ms] http-84.17.47.148'
+  - '[752.6ms +/-1292ms] http-51.159.225.196'
+  - '[893.4ms +/-1436ms] http-154.47.29.161'
+  - '[652.6ms +/-1297ms] shadowsocks-1938409002'
+  - '[668.7ms +/-1102ms] shadowsocks-1938409003'
+  - '[927.0ms +/-797ms] 4Jadi-c2e6ff7722'
+  - '[1082.0ms +/-2130ms] http-37.120.156.18'
+  - '[2186.5ms +/-3543ms] 4Mohsen-0359eb4116'
+  - '[1173.0ms +/-1465ms] http-83.206.1.225'
+  - '[961.4ms +/-1233ms] shadowsocks-1938408994'
+  - '[1381.0ms +/-1283ms] 4Jadi-34eab92735'
+  - '[981.1ms +/-1317ms] shadowsocks-1938408996'
+  - '[1233.2ms +/-1580ms] 4FreeIran-2e7ccf649d'
+  - '[1688.1ms +/-2792ms] 4Mohsen-b13483d71a'
+  url: https://www.gstatic.com/generate_204
+  interval: 600
+- name: 🇯🇵 日本
+  type: url-test
+  proxies:
+  - 🇯🇵 [376.4ms +/-297ms] shadowsocks-1827146287
+  - 🇯🇵 [375.7ms +/-296ms] shadowsocks-1827146197
+  url: https://www.gstatic.com/generate_204
+  interval: 600
+- name: 🇳🇱 荷兰
+  type: url-test
+  proxies:
+  - 🇳🇱 [615.0ms +/-987ms] vless-1935750593
+  - 🇳🇱 [671.3ms +/-1078ms] vless-1879632165
+  url: https://www.gstatic.com/generate_204
+  interval: 600
+- name: 🇸🇪 其他
+  type: url-test
+  proxies:
+  - 🇸🇪 [741.3ms +/-1184ms] vless-1927184320
+  - 🇸🇪 [745.8ms +/-1036ms] vless-1853498483
   url: https://www.gstatic.com/generate_204
   interval: 600
 - name: 🇺🇸 美国
   type: url-test
   proxies:
-  - 🇺🇸 [263.9ms +/-588ms] trojan-1930077596
-  - 🇺🇸 [264.6ms +/-601ms] trojan-1929965362
-  - 🇺🇸 [268.6ms +/-605ms] trojan-1932448326
-  - 🇺🇸 [265.2ms +/-603ms] trojan-1929965354
-  - 🇺🇸 [308.4ms +/-601ms] trojan-1935007697
-  - 🇺🇸 [305.6ms +/-601ms] trojan-1929965329
-  - 🇺🇸 [303.1ms +/-602ms] trojan-1929965344
-  - 🇺🇸 [323.0ms +/-626ms] vless-1880433481
-  - 🇺🇸 [418.9ms +/-693ms] trojan-1929965338
-  - 🇺🇸 [369.6ms +/-742ms] Channel
-  - 🇺🇸 [353.0ms +/-753ms] vless-1828372448
-  - 🇺🇸 [259.5ms +/-570ms] trojan-1930077602
-  - 🇺🇸 [298.1ms +/-653ms] trojan-1936051367
-  - 🇺🇸 [363.2ms +/-813ms] shadowsocks-1875129452
-  - 🇺🇸 [402.6ms +/-816ms] vless-1853340968
-  - 🇺🇸 [378.7ms +/-621ms] vless-1853340740
-  - 🇺🇸 [323.3ms +/-736ms] @DeltaKroneckerGithub
-  - 🇺🇸 [654.5ms +/-1724ms] vless-1860511077
+  - 🇺🇸 [346.7ms +/-761ms] vless-1877172710
+  - 🇺🇸 [578.2ms +/-1530ms] trojan-1929965351
+  - 🇺🇸 [455.2ms +/-1111ms] trojan-1827613948
+  - 🇺🇸 [444.8ms +/-989ms] vless-1835128666
+  - 🇺🇸 [409.5ms +/-1078ms] hysteria2-1830343753
+  - 🇺🇸 [439.3ms +/-970ms] vless-1828293927
+  - 🇺🇸 [290.8ms +/-585ms] shadowsocks-1827146667
+  - 🇺🇸 [424.1ms +/-890ms] vless-1937733881
+  - 🇺🇸 [354.0ms +/-830ms] shadowsocks-1853341729
+  - 🇺🇸 [496.3ms +/-838ms] shadowsocks-1827146718
+  - 🇺🇸 [684.7ms +/-1070ms] @prrofile_purple
+  - 🇺🇸 [781.3ms +/-1222ms] Channel
   url: https://www.gstatic.com/generate_204
   interval: 600
 dns:
