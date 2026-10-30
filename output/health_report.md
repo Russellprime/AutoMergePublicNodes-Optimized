@@ -5,48 +5,48 @@
 | Metric | Value |
 | --- | --- |
 | Version | 2.5.0 |
-| Updated | 2026-10-30 12:02:45 |
-| Elapsed | 311.6s |
+| Updated | 2026-10-30 17:50:03 |
+| Elapsed | 313.7s |
 | Sources (total) | 107 |
-| Sources (healthy) | 87 |
-| Nodes (raw) | 100173 |
-| Nodes (unique) | 27741 |
+| Sources (healthy) | 88 |
+| Nodes (raw) | 100585 |
+| Nodes (unique) | 27646 |
 | Nodes (TCP pass) | 3000 |
-| Nodes (probe pass) | 555 |
-| Nodes (real-test pass) | 77 |
-| Top links output | 77 |
+| Nodes (probe pass) | 480 |
+| Nodes (real-test pass) | 111 |
+| Top links output | 111 |
 | Clean IPs | 20 |
-| Verified output | 77 |
-| Global output | 79 |
-| All output | 27741 |
+| Verified output | 111 |
+| Global output | 112 |
+| All output | 27646 |
 
 ## Stage Duration
 
 | Stage | Seconds |
 | --- | --- |
-| fetch | 6.1 |
+| fetch | 7.6 |
 | geo | 1.5 |
-| tcp | 88.9 |
-| probe | 89.0 |
-| real_test | 82.1 |
-| china_check | 30.1 |
-| write_verified | 0.0 |
-| generate | 11.8 |
+| tcp | 86.8 |
+| probe | 95.3 |
+| real_test | 79.8 |
+| china_check | 26.0 |
+| write_verified | 0.1 |
+| generate | 14.5 |
 
 ## Protocol Distribution
 
 | Protocol | Count |
 | --- | --- |
-| vless | 62016 |
-| vmess | 14657 |
-| shadowsocks | 10843 |
-| trojan | 10086 |
+| vless | 62192 |
+| vmess | 14739 |
+| shadowsocks | 10812 |
+| trojan | 10238 |
 | hysteria2 | 2216 |
-| shadowsocksr | 166 |
-| http | 98 |
-| socks | 48 |
-| tuic | 17 |
-| anytls | 15 |
+| shadowsocksr | 177 |
+| http | 115 |
+| socks | 56 |
+| tuic | 16 |
+| anytls | 13 |
 | hysteria | 11 |
 
 ## Ranking Weights
@@ -65,72 +65,71 @@
 
 | Score | Protocol | Latency(ms) | Jitter(ms) | Latency pts | Jitter pts | TCP pts | Protocol-history pts | Source-history pts | Source | Server |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 78.18 | trojan | 265.4 | 593.1 | 21.63 | 0.0 | 10.0 | 14.2 | 14.92 | Au1rxx-base64 | 66.163.114.45 |
-| 77.71 | trojan | 266.3 | 601.4 | 21.61 | 0.0 | 9.48 | 14.2 | 14.92 | Au1rxx-base64 | 66.163.114.132 |
-| 77.3 | hysteria2 | 263.1 | 670.6 | 21.69 | 0.0 | 10.0 | 12.19 | 14.92 | Au1rxx-base64 | 129.213.91.185 |
-| 76.55 | trojan | 266.3 | 588.1 | 21.61 | 0.0 | 8.32 | 14.2 | 14.92 | Au1rxx-base64 | 66.163.114.106 |
-| 76.52 | trojan | 272.1 | 605.6 | 21.48 | 0.0 | 8.43 | 14.2 | 14.92 | Au1rxx-base64 | 66.163.114.245 |
-| 75.33 | trojan | 268.6 | 607.9 | 21.56 | 0.0 | 8.31 | 14.2 | 14.92 | Au1rxx-base64 | 66.163.114.126 |
-| 75.15 | trojan | 262.0 | 621.6 | 21.71 | 0.0 | 8.43 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.19 |
-| 74.56 | trojan | 231.2 | 587.0 | 22.43 | 0.0 | 8.51 | 14.2 | 14.92 | Au1rxx-base64 | 216.152.155.59 |
-| 74.3 | trojan | 266.2 | 628.2 | 21.62 | 0.0 | 8.44 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.67 |
-| 74.27 | trojan | 269.5 | 619.2 | 21.54 | 0.0 | 7.11 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.211 |
-| 73.95 | trojan | 228.8 | 574.0 | 22.48 | 0.0 | 7.85 | 14.2 | 14.92 | Au1rxx-base64 | 216.152.155.23 |
-| 72.81 | trojan | 265.5 | 612.5 | 21.63 | 0.0 | 5.56 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.131 |
-| 72.67 | trojan | 477.9 | 1225.0 | 16.71 | 0.0 | 10.0 | 14.2 | 14.92 | Au1rxx-base64 | 66.23.203.21 |
-| 72.63 | trojan | 235.0 | 559.9 | 22.34 | 0.0 | 5.67 | 14.2 | 14.92 | Au1rxx-base64 | 216.152.155.131 |
-| 72.3 | trojan | 268.1 | 620.0 | 21.57 | 0.0 | 7.11 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.112 |
-| 72.29 | trojan | 268.3 | 634.9 | 21.57 | 0.0 | 7.1 | 14.2 | 14.92 | Au1rxx-base64 | 170.101.101.53 |
-| 71.58 | trojan | 347.7 | 737.6 | 19.73 | 0.0 | 7.5 | 14.2 | 14.92 | Au1rxx-base64 | 169.197.140.169 |
-| 71.43 | trojan | 286.5 | 755.1 | 21.14 | 0.0 | 5.67 | 14.2 | 14.92 | Au1rxx-base64 | 216.152.155.176 |
-| 71.11 | trojan | 238.3 | 584.9 | 22.26 | 0.0 | 7.23 | 14.2 | 14.92 | Au1rxx-base64 | 216.152.155.54 |
-| 71.01 | trojan | 352.7 | 721.0 | 19.61 | 0.0 | 6.88 | 14.2 | 14.92 | Au1rxx-base64 | 169.197.140.214 |
+| 73.55 | vless | 207.9 | 479.4 | 22.97 | 0.0 | 10.0 | 7.22 | 13.36 | Au1rxx-base64 | 45.32.69.110 |
+| 73.44 | vless | 212.3 | 505.9 | 22.86 | 0.0 | 10.0 | 7.22 | 13.36 | Au1rxx-base64 | 144.202.126.147 |
+| 73.16 | trojan | 200.7 | 473.3 | 23.13 | 0.0 | 9.73 | 10.44 | 13.36 | Au1rxx-base64 | 167.88.61.20 |
+| 72.41 | trojan | 201.8 | 472.7 | 23.11 | 0.0 | 10.0 | 10.44 | 13.36 | Au1rxx-base64 | 167.88.61.175 |
+| 72.34 | trojan | 236.2 | 575.1 | 22.31 | 0.0 | 9.73 | 10.44 | 13.36 | Au1rxx-base64 | 167.88.61.193 |
+| 71.68 | trojan | 284.0 | 674.8 | 21.2 | 0.0 | 9.55 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.112.242 |
+| 71.42 | trojan | 294.4 | 668.1 | 20.96 | 0.0 | 10.0 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.114.45 |
+| 71.22 | vless | 202.3 | 469.3 | 23.09 | 0.0 | 7.55 | 7.22 | 13.36 | Au1rxx-base64 | 47.251.108.158 |
+| 71.13 | trojan | 244.9 | 558.2 | 22.11 | 0.0 | 7.9 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.112.13 |
+| 70.98 | vless | 209.4 | 482.4 | 22.93 | 0.0 | 7.47 | 7.22 | 13.36 | Au1rxx-base64 | 45.63.53.81 |
+| 70.06 | trojan | 295.5 | 671.9 | 20.94 | 0.0 | 9.46 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.114.132 |
+| 69.29 | trojan | 294.3 | 668.7 | 20.97 | 0.0 | 7.87 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.114.245 |
+| 68.85 | trojan | 297.4 | 673.2 | 20.89 | 0.0 | 7.44 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.114.126 |
+| 68.84 | trojan | 254.8 | 529.3 | 21.88 | 0.0 | 5.66 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.112.31 |
+| 68.36 | trojan | 241.5 | 549.1 | 22.19 | 0.0 | 7.9 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.112.76 |
+| 68.22 | hysteria2 | 345.9 | 724.5 | 19.77 | 0.0 | 10.0 | 10.0 | 13.36 | Au1rxx-base64 | 129.213.91.185 |
+| 68.06 | trojan | 197.7 | 472.8 | 23.2 | 0.0 | 5.56 | 10.44 | 13.36 | Au1rxx-base64 | 167.88.61.85 |
+| 66.23 | vless | 224.9 | 521.7 | 22.57 | 0.0 | 8.08 | 7.22 | 13.36 | Au1rxx-base64 | 195.123.240.65 |
+| 66.08 | trojan | 244.3 | 553.6 | 22.12 | 0.0 | 5.66 | 10.44 | 13.36 | Au1rxx-base64 | 66.163.112.142 |
+| 65.69 | shadowsocks | 262.1 | 626.5 | 21.71 | 0.0 | 10.0 | 4.62 | 13.36 | Au1rxx-base64 | 173.244.56.6 |
 
 ## Source Quality
 
 | Source | Score | Pass Rate | Tested | Parsed Nodes | Recommendation |
 | --- | --- | --- | --- | --- | --- |
-| ermaozi | 0.793 | 0.8 | 20 | 515 | prefer |
-| Au1rxx-base64 | 0.668 | 0.598 | 331 | 1751 | observe |
-| Surfboard-tg-mixed | 0.436 | 0.354 | 130 | 7902 | observe |
-| mheidari-all | 0.372 | 0.286 | 70 | 34171 | observe |
-| DeltaKronecker-all | 0.349 | 0.667 | 3 | 2724 | observe |
-| xiaoji235-airport-v2ray-all | 0.335 | 1.0 | 1 | 6752 | observe |
+| ermaozi | 0.855 | 0.857 | 28 | 550 | prefer |
+| mheidari-all | 0.634 | 0.556 | 63 | 34258 | observe |
+| Surfboard-tg-mixed | 0.536 | 0.455 | 66 | 7967 | observe |
+| Au1rxx-base64 | 0.53 | 0.459 | 320 | 1751 | observe |
+| xiaoji235-airport-v2ray-all | 0.287 | 0.5 | 2 | 6752 | observe |
 | 10ium-ScrapeCategorize-Vless | 0.255 | None | 0 | 4960 | observe |
-| MatinGhanbari-all-sub | 0.255 | None | 0 | 3999 | observe |
-| SoliSpirit-all | 0.255 | None | 0 | 10513 | observe |
-| Surfboard-tg-vless | 0.255 | None | 0 | 5822 | observe |
-| barry-far-vless | 0.255 | None | 0 | 5942 | observe |
+| MatinGhanbari-all-sub | 0.255 | None | 0 | 3998 | observe |
+| SoliSpirit-all | 0.255 | None | 0 | 10582 | observe |
+| Surfboard-tg-vless | 0.255 | None | 0 | 5801 | observe |
+| barry-far-vless | 0.255 | None | 0 | 6035 | observe |
 | mahdibland-V2RayAggregator | 0.255 | None | 0 | 4445 | observe |
 | ninja-vless | 0.247 | None | 0 | 1791 | observe |
 | Au1rxx-clash | 0.245 | None | 0 | 1751 | observe |
 | moneyfly1-collectSub | 0.222 | None | 0 | 1164 | observe |
+| 10ium-HighSpeed | 0.209 | None | 0 | 839 | observe |
 
 ## Real Test Failures
 
 | Target | Reason | Status/Value | Count |
 | --- | --- | --- | --- |
-| geo | status | 403 | 74 |
-| test_one_timeout | 15.0s | - | 72 |
-| geo | status | 429 | 66 |
-| speed | ClientOSError | - | 23 |
-| 204 | ProxyError | - | 10 |
-| cn-block | TimeoutError | - | 6 |
-| cn-block | ClientOSError | - | 5 |
-| 204 | TimeoutError | - | 4 |
-| 204 | ClientOSError | - | 4 |
+| geo | status | 429 | 73 |
+| geo | status | 403 | 62 |
+| test_one_timeout | 15.0s | - | 57 |
+| speed | ClientOSError | - | 19 |
+| 204 | TimeoutError | - | 9 |
+| 204 | ClientOSError | - | 6 |
+| 204 | ProxyError | - | 6 |
+| cn-block | TimeoutError | - | 4 |
 | cn-block | ProxyError | - | 3 |
-| geo | status | 503 | 2 |
 | geo | ClientOSError | - | 1 |
-| geo | ProxyError | - | 1 |
 | geo | TimeoutError | - | 1 |
+| speed | TimeoutError | - | 1 |
+| cn-block | ClientOSError | - | 1 |
 
 ## Output Guard
 
 | Prefix | Preserved previous | Previous count | Current proposed count | Retain ratio |
 | --- | --- | --- | --- | --- |
-| verified | False | 94 | 77 | - |
-| global | False | 101 | 79 | - |
+| verified | False | 77 | 111 | - |
+| global | False | 79 | 112 | - |
 
 ---
 
