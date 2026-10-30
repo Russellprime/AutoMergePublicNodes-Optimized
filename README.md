@@ -138,19 +138,19 @@ MIT
 
 | 指标 | 数值 |
 | --- | --- |
-| Updated | 2026-10-29 22:23:02 |
+| Updated | 2026-10-30 03:59:16 |
 | Version | 2.5.0 |
-| Sources | 87/107 |
-| Raw nodes | 99308 |
-| Unique nodes | 27784 |
+| Sources | 86/107 |
+| Raw nodes | 99743 |
+| Unique nodes | 27979 |
 | TCP pass | 3000 |
-| Real-test pass | 104 |
-| Real-test pass rate | 3.5% |
-| Top links output | 104 |
+| Real-test pass | 94 |
+| Real-test pass rate | 3.1% |
+| Top links output | 94 |
 | Clean IPs | 20 |
-| Verified output | 104 |
-| Global output | 111 |
-| All output | 27784 |
+| Verified output | 94 |
+| Global output | 101 |
+| All output | 27979 |
 
 > Output guard: none. Full report: `output/health_report.md`, `output/stats.json`.
 
@@ -158,21 +158,21 @@ MIT
 
 | Score | Protocol | Latency(ms) | Source |
 | --- | --- | --- | --- |
-| 71.02 | vless | 296.8 | Au1rxx-base64 |
-| 69.05 | trojan | 431.2 | Au1rxx-base64 |
-| 68.38 | trojan | 311.9 | Au1rxx-base64 |
-| 67.72 | vless | 346.4 | Au1rxx-base64 |
-| 67.0 | trojan | 294.7 | Au1rxx-base64 |
+| 69.98 | trojan | 201.6 | Au1rxx-base64 |
+| 67.86 | trojan | 206.8 | Au1rxx-base64 |
+| 67.47 | vless | 208.8 | Au1rxx-base64 |
+| 67.47 | vless | 209.1 | Au1rxx-base64 |
+| 66.5 | vless | 250.9 | Au1rxx-base64 |
 
 ### Top Source Quality
 
 | Source | Score | Tested | Recommendation |
 | --- | --- | --- | --- |
-| Surfboard-tg-mixed | 0.836 | 39 | prefer |
-| ermaozi | 0.77 | 22 | prefer |
-| mheidari-all | 0.547 | 163 | observe |
-| Au1rxx-base64 | 0.45 | 331 | observe |
-| xiaoji235-airport-v2ray-all | 0.335 | 1 | observe |
+| ermaozi | 0.839 | 20 | prefer |
+| Au1rxx-base64 | 0.746 | 308 | prefer |
+| Surfboard-tg-mixed | 0.568 | 166 | observe |
+| mheidari-all | 0.499 | 232 | observe |
+| DeltaKronecker-all | 0.335 | 1 | observe |
 
 <!-- AUTONODES_STATS_END -->
 
